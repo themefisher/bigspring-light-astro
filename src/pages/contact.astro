@@ -1,0 +1,80 @@
+---
+import config from "@config/config.json";
+import Base from "@layouts/Base.astro";
+import { markdownify } from "@lib/utils/textConverter";
+import { getEntryBySlug } from "astro:content";
+
+const entry = await getEntryBySlug("contact", "index");
+const { contact_form_action } = config.params;
+const { title, info } = entry?.data;
+---
+
+<Base
+  title={title}
+>
+<section class="section">
+  <div class="container">
+   
+    <h1 class="text-center font-normal" set:html={markdownify(title)}></h1>
+    <div class="section row pb-0">
+      <div class="col-12 md:col-6 lg:col-7">
+        <form
+          class="contact-form"
+          method="POST"
+          action={contact_form_action}
+        >
+          <div class="mb-3">
+            <input
+              class="form-input w-full rounded"
+              name="name"
+              type="text"
+              placeholder="Name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              class="form-input w-full rounded"
+              name="email"
+              type="email"
+              placeholder="Your email"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              class="form-input w-full rounded"
+              name="subject"
+              type="text"
+              placeholder="Subject"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <textarea
+              class="form-textarea w-full rounded-md"
+              rows="7"
+              placeholder="Your message"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Send Now
+          </button>
+        </form>
+      </div>
+      <div class="content col-12 md:col-6 lg:col-5">
+        
+        <h4 set:html={markdownify(info?.title)}></h4>
+        <p class="mt-4" set:html={markdownify(info?.description)}></p>
+        <ul class="contact-list mt-5 list-none pl-0">
+          {info?.contacts?.map((contact:string, index:number) => (
+            <li>
+              <strong class="text-dark" set:html={markdownify(contact)}></strong>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</Base>

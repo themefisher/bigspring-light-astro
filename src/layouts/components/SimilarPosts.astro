@@ -1,0 +1,29 @@
+---
+import { Image } from "@astrojs/image/components";
+const { posts } = Astro.props;
+import config from '@config/config.json';
+const {blog_folder} = config.settings
+---
+
+<div class="row justify-center">
+  {
+    posts.map((post: any) => (
+      <div class={"col-12 mb-4 sm:col-4"}>
+        {post.data.image && (
+          <Image
+            class="rounded-lg"
+            src={post.data.image}
+            alt={post.data.title}
+            width={445}
+            height={230}
+          />
+        )}
+        <h3 class="h4">
+          <a href={`/${blog_folder}/${post.slug}`} class="block hover:text-primary">
+            {post.data.title}
+          </a>
+        </h3>
+      </div>
+    ))
+  }
+</div>

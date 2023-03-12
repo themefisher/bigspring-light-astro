@@ -1,0 +1,11 @@
+b,
+strong {
+  @apply font-semibold;
+}
+code {
+  @apply after:border-none;
+}
+
+.shadow {
+  box-shadow: 0 12px 24px -6px rgba(45,67,121,.1);
+}

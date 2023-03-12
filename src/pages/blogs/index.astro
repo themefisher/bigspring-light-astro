@@ -1,0 +1,75 @@
+---
+import { Image } from "@astrojs/image/components";
+import config from "@config/config.json";
+import Base from "@layouts/Base.astro";
+import Pagination from "@layouts/components/Pagination.astro";
+import Post from "@layouts/partials/Post.astro";
+import { getSinglePage } from "@lib/contentParser.astro";
+import { sortByDate } from "@lib/utils/sortFunctions";
+import { markdownify, plainify } from "@lib/utils/textConverter";
+import { getEntryBySlug } from "astro:content";
+
+const { blog_folder, summary_length } = config.settings;
+
+const postIndex = await getEntryBySlug<any, string>(blog_folder, "_index");
+const posts = await getSinglePage(blog_folder);
+const sortedPosts = sortByDate(posts);
+const totalPages = Math.ceil(posts.length / config.settings.pagination);
+const currentPosts = sortedPosts.slice(0, config.settings.pagination);
+---
+
+<Base>
+  <section class="section">
+    <div class="container">
+      <h1
+        class="text-center font-normal lg:text-[56px]"
+        set:html={markdownify(postIndex?.data.title)}
+      />
+      <div class="row pb-12">
+        <div class="row col-12 pb-24 pt-16">
+          <div class="md:col-6">
+            {
+              currentPosts[0].data.image && (
+                <Image
+                  class="rounded-lg"
+                  src={currentPosts[0].data.image}
+                  alt={currentPosts[0].data.title}
+                  width={925}
+                  height={475}
+                />
+              )
+            }
+          </div>
+          <div class="md:col-6">
+            <h2 class="h3 mb-2 mt-4">
+              <a
+                href={`/${blog_folder}/${currentPosts[0].slug}`}
+                class="block hover:text-primary"
+              >
+                {currentPosts[0].data.title}
+              </a>
+            </h2>
+            <p
+              set:html={plainify(currentPosts[0].body.slice(0, summary_length))}
+            />
+            <a
+              class="btn btn-primary mt-4"
+              href={`/${blog_folder}/${currentPosts[0].slug}`}
+              rel=""
+            >
+              Read More
+            </a>
+          </div>
+        </div>
+        {
+          currentPosts.slice(1).map((post) => (
+            <div class="col-12 mb-8 sm:col-6 lg:col-4">
+              <Post post={post} />
+            </div>
+          ))
+        }
+      </div>
+      <Pagination section="blogs" currentPage={1} totalPages={totalPages} />
+    </div>
+  </section>
+</Base>

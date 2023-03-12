@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import "base";
+}
+
+@layer components {
+  @import "components";
+  @import "navigation";
+  @import "buttons";
+  @import '../../node_modules/swiper/swiper.scss';
+}
+
+@layer utilities {
+  @import "utilities";
+}
