@@ -1,3 +1,18 @@
+#hide-button {
+  @apply hidden;
+}
+
+#nav-toggle:checked ~ #show-button {
+  @apply hidden;
+}
+
+#nav-toggle:checked ~ #hide-button {
+  @apply block md:hidden;
+}
+#nav-toggle:checked ~ #nav-menu {
+    @apply block md:flex;
+}
+
 .header {
   @apply bg-white py-[14px] px-4 md:px-0 md:py-[9px];
 }
