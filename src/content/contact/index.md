@@ -1,6 +1,5 @@
 ---
 title: "Contact Us"
-layout: "contact"
 draft: false
 info: 
   title: Why you should contact us!

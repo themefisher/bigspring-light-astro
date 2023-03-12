@@ -1,8 +1,8 @@
 ---
-title: "What you need to know about Photography"
+title: "Adversus is a web-based dialer and practical CRM solution"
 description: "Heading example Here is example of hedings. You can use this heading by following markdownify rules."
-image: "/images/blog-1.jpg"
-date: 2022-04-04T05:00:00Z
+image: "/images/blog-4.jpg"
+date: 2022-08-04T05:00:00Z
 draft: false
 ---
 
@@ -144,9 +144,3 @@ raw Markdown line up prettily. You can also use inline Markdown.
 ##### Images
 
 ![service](/images/service-slide-1.png "service")
-
----
-
-##### Youtube video
-
-<YoutubePlayer id="C0DPdy98e4c" title="YouTube Video" />

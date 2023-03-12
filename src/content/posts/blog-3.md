@@ -1,8 +1,8 @@
 ---
-title: How to make toys from old Olarpaper
+title: What you need to know about Photography
 description: "Heading example Here is example of hedings. You can use this heading by following markdownify rules."
-image: "/images/blog-2.jpg"
-date: 2022-05-04T05:00:00Z
+image: "/images/blog-3.jpg"
+date: 2022-06-02T06:00:00+00:00
 draft: false
 ---
 
@@ -144,9 +144,3 @@ raw Markdown line up prettily. You can also use inline Markdown.
 ##### Images
 
 ![service](/images/service-slide-1.png "service")
-
----
-
-##### Youtube video
-
-<YoutubePlayer id="C0DPdy98e4c" title="YouTube Video" />

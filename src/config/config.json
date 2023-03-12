@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Bigspring Light Astro",
-    "base_url": "https://example.com",
+    "base_url": "https://bigspring-light-astro.vercel.app",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
@@ -14,7 +14,7 @@
   "settings": {
     "pagination": 4,
     "summary_length": 200,
-    "blog_folder": "blogs"
+    "blog_folder": "posts"
   },
 
   "nav_button": {
