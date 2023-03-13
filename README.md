@@ -1,5 +1,5 @@
 <h1 align=center>Bigspring Light Astro</h1>
-<p align=center>Bigspring Light is a minimal multi-author free astro blog template. This highly customizable theme is ideal for creating any type of blog website, including food, recipes, beauty, lifestyle, photography, travel, health, fitness, and more.</p>
+<p align=center>Bigspring Light Astro is a modern, responsive business template built with Astro. It is an ideal theme for displaying your products or services, providing company details, and engaging with your audience.</p>
 <h2 align="center"> <a target="_blank" href="https://bigspring-light-astro.vercel.app/" rel="nofollow">Demo</a> | <a  target="_blank" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fbigspring-light-astro.vercel.app%2F&form_factor=desktop">Page Speed (100%)</a>
 </h2>
 
@@ -19,22 +19,17 @@
 
 ![bigspring-light](https://demo.gethugothemes.com/thumbnails/bigspring-light.png)
 
-👉🏻[View Live Preview](https://bigspring-light-astro.vercel.app/)
-
-<!-- download -->
-## Download
-
-Download this template from [Github](https://github.com/themefisher/bigspring-light-astro/archive/main.zip)
 
 ## Key Features
 
-- Simple and Minimal
-- Fully Responsive
-- Google Page Speed score 90+
+- Page Speed Score 100 (on Desktop)
 - Google analytics support
-- Caching enabled
-- Supports Contact Form
-- SEO Friendly
+- Contact form Support
+- SEO-Friendly
+- Tailwind CSS
+- Color and fonts variable in the config file
+- Image Optimized With Astro/image
+
 
 <!-- installation -->
 ## Installation
