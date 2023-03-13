@@ -43,8 +43,9 @@
   @apply prose max-w-none prose-headings:font-bold prose-h1:mb-4 prose-h1:text-h1-sm prose-h2:mb-4 prose-h2:mt-4 prose-h2:text-h2-sm prose-h3:mt-4 prose-h3:text-h3-sm prose-h4:mt-4 prose-h5:mb-4 prose-h5:text-base prose-h6:mb-6 prose-h6:text-[15px] prose-a:no-underline hover:prose-a:text-primary prose-blockquote:border-primary prose-blockquote:py-1 prose-blockquote:px-4 prose-ol:pl-4 prose-ul:list-none prose-ul:pl-0 prose-hr:my-5 md:prose-h1:text-h1 md:prose-h2:text-h2 md:prose-h3:text-h3;
 
   ul {
+    @apply pl-2;
     li {
-      @apply relative pl-5 before:absolute before:left-0 before:top-[10px] before:h-2 before:w-2 before:rounded-full before:bg-primary before:content-[''];
+      @apply relative list-none pl-5 before:absolute before:left-0 before:top-[10px] before:h-2 before:w-2 before:rounded-full before:bg-primary before:content-[''];
     }
   }
 }
@@ -113,7 +114,6 @@
   }
 }
 
-
 // content style
 .content {
   @apply prose max-w-none;
@@ -123,28 +123,26 @@
   @apply prose-h3:text-h3-sm md:prose-h3:text-h3;
   @apply prose-hr:border-border;
   @apply prose-p:text-base prose-p:text-text;
-  @apply prose-blockquote:border-primary prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:rounded;
+  @apply prose-blockquote:rounded prose-blockquote:border-primary prose-blockquote:py-1 prose-blockquote:px-4;
   @apply prose-code:px-1 prose-code:text-primary;
   @apply prose-pre:rounded;
   @apply prose-strong:text-dark;
   @apply prose-a:text-primary prose-a:no-underline hover:prose-a:underline;
   @apply prose-li:text-text;
   @apply prose-table:overflow-hidden prose-table:border prose-table:border-border;
-  @apply prose-thead:border-border prose-thead:bg-theme-light prose-th:py-4 prose-th:px-4 prose-th:text-dark ;
+  @apply prose-thead:border-border prose-thead:bg-theme-light prose-th:py-4 prose-th:px-4 prose-th:text-dark;
   @apply prose-tr:border-border;
   @apply prose-td:px-3 prose-td:py-4;
 }
-
 
 //swiper-pagination
 .pagination {
   @apply space-x-2 text-center;
   .swiper-pagination-bullet {
-    @apply inline-block w-2.5 h-2.5 rounded-full border-primary border cursor-pointer;
-  
+    @apply inline-block h-2.5 w-2.5 cursor-pointer rounded-full border border-primary;
+
     &-active {
       @apply bg-primary;
     }
   }
 }
-

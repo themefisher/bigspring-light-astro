@@ -19,6 +19,10 @@
     {
       "name": "FAQ",
       "url": "/faq"
+    },
+    {
+      "name": "Elements",
+      "url": "/elements"
     }
   ],
   "footer": [
@@ -61,11 +65,11 @@
         },
         {
           "text": "Privacy Policy",
-          "url": "#"
+          "url": "/privacy-policy"
         },
         {
           "text": "Terms & Conditions",
-          "url": "#"
+          "url": "/terms-conditions"
         }
       ]
     }

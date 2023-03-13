@@ -1,7 +1,7 @@
 ---
 import Logo from "@components/Logo.astro";
+import { nav_button } from "@config/config.json";
 import menu from "@config/menu.json";
-import {nav_button} from '@config/config.json'
 
 const pathname = new URL(Astro.request.url).pathname;
 
@@ -70,7 +70,12 @@ const { main }: { main: NavigationLink[] } = menu;
                 <ul class="nav-dropdown-list hidden group-hover:block md:invisible md:absolute md:block md:opacity-0 md:group-hover:visible md:group-hover:opacity-100">
                   {menu.children?.map((child) => (
                     <li class="nav-dropdown-item">
-                      <a href={child.url} class={`nav-dropdown-link block ${pathname === child.url && 'nav-link-active'}`}>
+                      <a
+                        href={child.url}
+                        class={`nav-dropdown-link block ${
+                          pathname === child.url && "nav-link-active"
+                        }`}
+                      >
                         {child.name}
                       </a>
                     </li>
@@ -79,7 +84,12 @@ const { main }: { main: NavigationLink[] } = menu;
               </li>
             ) : (
               <li class="nav-item">
-                <a href={menu.url} class={`nav-link block ${pathname === menu.url && 'nav-link-active'}`}>
+                <a
+                  href={menu.url}
+                  class={`nav-link block ${
+                    pathname === menu.url && "nav-link-active"
+                  }`}
+                >
                   {menu.name}
                 </a>
               </li>
@@ -87,15 +97,30 @@ const { main }: { main: NavigationLink[] } = menu;
           </fragment>
         ))
       }
+      {
+        nav_button.enable && (
+          <div class="block md:hidden">
+            <a
+              class="btn btn-primary z-0 ml-auto py-[14px]"
+              href={nav_button.link}
+            >
+              {nav_button.label}
+            </a>
+          </div>
+        )
+      }
     </ul>
-    {nav_button.enable && <div class="hidden order-1 ml-auto md:flex items-center md:order-2 md:ml-0 md:min-w-[150px] lg:min-w-[200px]">
-      <a
-        class="btn btn-primary z-0 py-[14px] ml-auto"
-        href={nav_button.link}
-      >
-        {nav_button.label}
-      </a>
-    </div>}
-    
+    {
+      nav_button.enable && (
+        <div class="order-1 ml-auto hidden items-center md:order-2 md:ml-0 md:flex md:min-w-[150px] lg:min-w-[200px]">
+          <a
+            class="btn btn-primary z-0 ml-auto py-[14px]"
+            href={nav_button.link}
+          >
+            {nav_button.label}
+          </a>
+        </div>
+      )
+    }
   </nav>
 </header>
