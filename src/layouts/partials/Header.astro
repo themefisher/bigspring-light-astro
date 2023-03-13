@@ -20,7 +20,7 @@ export interface NavigationLink {
 const { main }: { main: NavigationLink[] } = menu;
 ---
 
-<header class={`header`}>
+<header class="header">
   <nav class="navbar container">
     <!-- logo -->
     <div class="order-0">
@@ -58,7 +58,7 @@ const { main }: { main: NavigationLink[] } = menu;
     >
       {
         main.map((menu) => (
-          <fragment>
+          <>
             {menu.hasChildren ? (
               <li class="nav-item nav-dropdown group relative">
                 <span class="nav-link inline-flex items-center">
@@ -94,7 +94,7 @@ const { main }: { main: NavigationLink[] } = menu;
                 </a>
               </li>
             )}
-          </fragment>
+          </>
         ))
       }
       {
