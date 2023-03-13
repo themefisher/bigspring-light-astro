@@ -1,5 +1,6 @@
 ---
 title: Pricing
+description: "meta description"
 draft: false
 plans:
 - title: Basic Plan

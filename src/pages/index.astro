@@ -64,7 +64,13 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
                 //   height={30}
                 //   alt=""
                 // />
-                <img class="mx-auto" src={item.icon} width={30} height={30} />
+                <img
+                  class="mx-auto"
+                  alt={item.icon}
+                  src={item.icon}
+                  width={30}
+                  height={30}
+                />
               )}
               <div class="mt-4">
                 <p class="h5" set:html={markdownify(item!.name)} />

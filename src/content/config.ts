@@ -98,7 +98,7 @@ const pagesCollection = defineCollection({
 const contact_page = defineCollection({
   schema: z.object({
     title: z.string().optional(),
-    layout: z.string().optional(),
+    description: z.string().optional(),
     draft: z.boolean().optional(),
     info: z.object({
       title: z.string().optional(),
@@ -112,7 +112,7 @@ const contact_page = defineCollection({
 const faq_page = defineCollection({
   schema: z.object({
     title: z.string().optional(),
-    layout: z.string().optional(),
+    description: z.string().optional(),
     draft: z.boolean().optional(),
     faqs: z.array(z.object({
       title: z.string(),
@@ -125,7 +125,7 @@ const faq_page = defineCollection({
 const pricing_page = defineCollection({
   schema: z.object({
     title: z.string().optional(),
-    layout: z.string().optional(),
+    description: z.string().optional(),
     draft: z.boolean().optional(),
     plans: z.array(z.object({
       title: z.string(),

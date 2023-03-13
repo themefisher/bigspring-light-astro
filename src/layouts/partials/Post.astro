@@ -1,35 +1,31 @@
 ---
 import { Image } from "@astrojs/image/components";
-import config from '@config/config.json';
+import config from "@config/config.json";
+import { plainify } from "@lib/utils/textConverter";
 
-const {post, index} = Astro.props;
-const {blog_folder} = config.settings;
-
+const { post, index } = Astro.props;
+const { blog_folder, summary_length } = config.settings;
 ---
 
 <div class="post">
-  {post.data.image && (
-    <Image
-      class="rounded-lg"
-      src={post.data.image}
-      alt={post.data.title}
-      width={index === 0 ? 925 : 445}
-      height={index === 0 ? 475 : 230}
-    />
-  )}
+  {
+    post.data.image && (
+      <Image
+        class="rounded-lg"
+        src={post.data.image}
+        alt={post.data.title}
+        width={index === 0 ? 925 : 445}
+        height={index === 0 ? 475 : 230}
+      />
+    )
+  }
   <h2 class="h3 mb-2 mt-4">
-    <a
-      href={`/${blog_folder}/${post.slug}`}
-      class="block hover:text-primary"
-    >
+    <a href={`/${blog_folder}/${post.slug}`} class="block hover:text-primary">
       {post.data.title}
     </a>
   </h2>
-  <a
-    class="btn btn-primary mt-4"
-    href={`/${blog_folder}/${post.slug}`}
-    rel=""
-  >
+  <p set:html={plainify(post.body.slice(0, summary_length))} />
+  <a class="btn btn-primary mt-4" href={`/${blog_folder}/${post.slug}`} rel="">
     Read More
   </a>
 </div>
