@@ -1,5 +1,6 @@
 <h1 align=center>Bigspring Light Astro</h1>
-<p align=center>Bigspring Light Astro is a modern, responsive business template built with Astro. It is an ideal theme for displaying your products or services, providing company details, and engaging with your audience.</p>
+<p align=center>Bigspring is a highly customizable Astro theme designed specifically for SaaS & marketing websites.  
+</p>
 <h2 align="center"> <a target="_blank" href="https://bigspring-light-astro.vercel.app/" rel="nofollow">Demo</a> | <a  target="_blank" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fbigspring-light-astro.vercel.app%2F&form_factor=desktop">Page Speed (100%)</a>
 </h2>
 
@@ -19,16 +20,23 @@
 
 ![bigspring-light](https://demo.gethugothemes.com/thumbnails/bigspring-light.png)
 
+Bigspring is a beautifully designed & highly customizable Astro theme created specifically for SaaS & marketing websites.  Users can customize the color scheme, fonts, menu, social links,  etc. and update the content easily based on their requirements. Bigspring is the perfect theme for showcasing your SaaS products or services and connecting with customers.
+
 
 ## Key Features
 
-- Page Speed Score 100 (on Desktop)
-- Google analytics support
-- Contact form Support
-- SEO-Friendly
-- Tailwind CSS
-- Color and fonts variable in the config file
-- Image Optimized With Astro/image
+- Highly customizable (Color, Font, Menu, Social Links, SEO Meta Tags, etc.)
+- Fast by default (95+ Google PageSpeed Score)
+- Netlify setting pre-configured
+- Contact form support
+- Pricing table
+- Support OG image
+- Write and update content in Markdown / MDX
+- MDX components auto import
+- Includes draft pages and posts
+- Built with Tailwind CSS framework
+- Fully responsive on desktops, tablets, and smartphones
+- SEO Friendly 
 
 
 <!-- installation -->
@@ -72,11 +80,6 @@ npm run build
 We use GitHub Issues as the official bug tracker for this Template. Please Search [existing issues](https://github.com/themefisher/bigspring-light-astro/issues). It’s possible someone has already reported the same problem.
 If your problem or idea has not been addressed yet, feel free to [open a new issue](https://github.com/themefisher/bigspring-light-astro/issues).
 
-<!-- support -->
-## Technical Support or Questions (Paid)
-
-If you have questions or need help integrating the product please [contact us](https://themefisher.com/contact) instead of opening an issue.
-
 <!-- licence -->
 ## License
 
@@ -86,9 +89,8 @@ Copyright (c) 2016 - Present, Designed & Developed by [Themefisher](https://them
 
 **Image license:** The images are only for demonstration purposes. They have their license, we don't have permission to share those images.
 
-## Hire Us
+## Need Custom Development Services?
 
-Besides developing unique, blazing-fast Astro templates, we also provide customized services. We specialize in creating affordable, high-quality static websites based on Astro.
+Besides developing beautifully designed and blazing-fast themes, we help businesses create fast, performance-focused, scalable & secure websites based on NextJs, Hugo, Astro, etc.
 
-If you need to customize the theme or complete website development from scratch, you can hire us. **Check Our
-[Contact Page](https://themefisher.com/contact)**
+If you need a custom theme, theme customization, or complete website development services from scratch you can [Hire Us](https://themefisher.com/contact). 
