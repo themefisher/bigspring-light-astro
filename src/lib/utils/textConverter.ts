@@ -1,6 +1,10 @@
-import githubSlugger from 'github-slugger';
+import { slug } from 'github-slugger';
 import { marked } from "marked";
-const { slug } = githubSlugger;
+
+marked.use({
+  mangle: false,
+  headerIds: false,
+});
 
 // slugify
 export const slugify = (content: string) => {
