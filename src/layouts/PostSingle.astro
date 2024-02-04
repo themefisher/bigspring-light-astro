@@ -1,6 +1,6 @@
 ---
-import { Image } from "@astrojs/image/components";
-import { markdownify } from "@lib/utils/textConverter";
+import { markdownify } from "@/lib/utils/textConverter";
+import { Image } from "astro:assets";
 
 const { post } = Astro.props;
 const { Content } = await post.render();

@@ -1,14 +1,23 @@
 ---
-import TwSizeIndicator from "@components/TwSizeIndicator.astro";
-import config from "@config/config.json";
-import theme from "@config/theme.json";
-import { plainify } from "@lib/utils/textConverter";
-import Footer from "@partials/Footer.astro";
-import Header from "@partials/Header.astro";
-import "@styles/style.scss";
+import TwSizeIndicator from "@/components/TwSizeIndicator.astro";
+import config from "@/config/config.json";
+import theme from "@/config/theme.json";
+import { plainify } from "@/lib/utils/textConverter";
+import Footer from "@/partials/Footer.astro";
+import Header from "@/partials/Header.astro";
+import "@/styles/main.scss";
+import { AstroFont } from "astro-font";
+import { ViewTransitions } from "astro:transitions";
 
 // font families
 const pf = theme.fonts.font_family.primary;
+
+let fontPrimary;
+if (theme.fonts.font_family.primary) {
+  fontPrimary = theme.fonts.font_family.primary
+    .replace(/\+/g, " ")
+    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, "");
+}
 
 // types for frontmatters
 export interface Props {
@@ -25,7 +34,7 @@ const { title, meta_title, description, image, noindex, canonical } =
   Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- favicon -->
@@ -47,11 +56,18 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <!-- google font css -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href={`https://fonts.googleapis.com/css2?family=${pf}&display=swap`}
-      rel="stylesheet"
+    <AstroFont
+      config={[
+        {
+          src: [],
+          preload: false,
+          display: "swap",
+          name: fontPrimary!,
+          fallback: "sans-serif",
+          cssVariable: "font-primary",
+          googleFontsURL: `https://fonts.googleapis.com/css2?family=${pf}&display=swap`,
+        },
+      ]}
     />
 
     <!-- responsive meta -->
@@ -75,9 +91,11 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta
       name="description"
       content={plainify(
-        description ? description : config.metadata.meta_description
+        description ? description : config.metadata.meta_description,
       )}
     />
+
+    <ViewTransitions />
 
     <!-- author from config.json -->
     <meta name="author" content={config.metadata.meta_author} />
@@ -86,7 +104,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta
       property="og:title"
       content={plainify(
-        meta_title ? meta_title : title ? title : config.site.title
+        meta_title ? meta_title : title ? title : config.site.title,
       )}
     />
 
@@ -94,7 +112,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta
       property="og:description"
       content={plainify(
-        description ? description : config.metadata.meta_description
+        description ? description : config.metadata.meta_description,
       )}
     />
     <meta property="og:type" content="website" />
@@ -107,7 +125,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta
       name="twitter:title"
       content={plainify(
-        meta_title ? meta_title : title ? title : config.site.title
+        meta_title ? meta_title : title ? title : config.site.title,
       )}
     />
 
@@ -115,7 +133,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta
       name="twitter:description"
       content={plainify(
-        description ? description : config.metadata.meta_description
+        description ? description : config.metadata.meta_description,
       )}
     />
 

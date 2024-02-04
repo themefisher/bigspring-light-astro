@@ -1,26 +1,28 @@
+import React from "react";
+
 const Button = ({
-  href,
+  label,
+  link,
   style,
   rel,
-  children,
 }: {
-  href: string;
+  label: string;
+  link: string;
   style?: string;
   rel?: string;
-  children: any;
 }) => {
   return (
     <a
-      href={href}
+      href={link}
       target="_blank"
       rel={`noopener noreferrer ${
         rel ? (rel === "follow" ? "" : rel) : "nofollow"
       }`}
-      className={`btn me-4 mb-4 ${
+      className={`btn mb-4 me-4 dark:hover:text-black hover:no-underline ${
         style === "outline" ? "btn-outline-primary" : "btn-primary"
-      } border-primary hover:text-white hover:no-underline`}
+      }`}
     >
-      {children}
+      {label}
     </a>
   );
 };
