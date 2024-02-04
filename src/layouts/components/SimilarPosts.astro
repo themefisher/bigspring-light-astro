@@ -1,8 +1,8 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 const { posts } = Astro.props;
-import config from '@config/config.json';
-const {blog_folder} = config.settings
+import config from "@/config/config.json";
+const { blog_folder } = config.settings;
 ---
 
 <div class="row justify-center">
@@ -19,7 +19,10 @@ const {blog_folder} = config.settings
           />
         )}
         <h3 class="h4">
-          <a href={`/${blog_folder}/${post.slug}`} class="block hover:text-primary">
+          <a
+            href={`/${blog_folder}/${post.slug}`}
+            class="block hover:text-primary"
+          >
             {post.data.title}
           </a>
         </h3>

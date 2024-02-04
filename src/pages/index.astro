@@ -1,8 +1,8 @@
 ---
-import { Image } from "@astrojs/image/components";
-import Base from "@layouts/Base.astro";
-import Cta from "@layouts/components/Cta.astro";
-import { markdownify } from "@lib/utils/textConverter";
+import { Image } from "astro:assets";
+import Base from "@/layouts/Base.astro";
+import Cta from "@/layouts/components/Cta.astro";
+import { markdownify } from "@/lib/utils/textConverter";
 import { getEntryBySlug } from "astro:content";
 
 const homepage = await getEntryBySlug("homepage", "index");
@@ -54,7 +54,7 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
       </div>
       <div class="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
         {
-          feature!.features.map((item, i) => (
+          feature!.features.map((item: any, i: number) => (
             <div class="feature-card rounded-xl bg-white p-5 pb-8 text-center">
               {item.icon && (
                 // <Image
@@ -85,7 +85,7 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
 
   <!-- Services -->
   {
-    services!.map((service, index: number) => {
+    services!.map((service: any, index: number) => {
       const isOdd = index % 2 > 0;
       return (
         <section class={`section ${isOdd && "bg-theme-light"}`}>
@@ -150,17 +150,24 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
   }
 
   <script>
-    import Swiper, { Autoplay, Pagination } from "swiper";
-    new Swiper(".service-carousel .swiper", {
-      modules: [Pagination, Autoplay],
-      autoplay: {
-        delay: 3000,
-      },
-      pagination: {
-        type: "bullets",
-        el: ".service-carousel .pagination",
-        clickable: true,
-      },
+    import { Swiper } from "swiper";
+    import "swiper/css";
+    import "swiper/css/pagination";
+    import { Autoplay, Pagination } from "swiper/modules";
+
+    // astro:page-load event is fired when the page is loaded
+    document.addEventListener("astro:page-load", () => {
+      new Swiper(".service-carousel .swiper", {
+        modules: [Pagination, Autoplay],
+        autoplay: {
+          delay: 3000,
+        },
+        pagination: {
+          type: "bullets",
+          el: ".service-carousel .pagination",
+          clickable: true,
+        },
+      });
     });
   </script>
   <!-- ./End service -->

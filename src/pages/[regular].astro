@@ -1,7 +1,7 @@
 ---
-import Base from "@layouts/Base.astro";
-import Default from "@layouts/Default.astro";
-import { getSinglePage } from "@lib/contentParser.astro";
+import Base from "@/layouts/Base.astro";
+import Default from "@/layouts/Default.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
 
 export async function getStaticPaths() {
   const pages = await getSinglePage("pages");

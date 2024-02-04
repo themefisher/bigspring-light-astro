@@ -5,8 +5,8 @@
 </h2>
 
 <p align=center>
-  <a href="https://github.com/withastro/astro/releases/tag/astro%402.0.11" alt="Contributors">
-    <img src="https://img.shields.io/static/v1?label=ASTRO&message=2.0&color=000&logo=astro" />
+  <a href="https://github.com/withastro/astro/releases/tag/astro%404.3.2" alt="Contributors">
+    <img src="https://img.shields.io/static/v1?label=ASTRO&message=4.3&color=000&logo=astro" />
   </a>
 
   <a href="https://github.com/themefisher/bigspring-light-astro/blob/main/LICENSE">
@@ -22,8 +22,8 @@
 
 Bigspring is a beautifully designed & highly customizable Astro theme created specifically for SaaS & marketing websites.  Users can customize the color scheme, fonts, menu, social links,  etc. and update the content easily based on their requirements. Bigspring is the perfect theme for showcasing your SaaS products or services and connecting with customers.
 
-
 ## 🔑Key Features
+
 - 📄 10+ Pre-Designed Pages
 - ✨ Highly Customizable (Color, Font, Menu, Social Links, SEO Meta Tags, etc.)
 - ⚡ Fast by Default (95+ Google PageSpeed Score)
@@ -104,4 +104,4 @@ Copyright (c) 2016 - Present, Designed & Developed by [Themefisher](https://them
 
 Besides developing beautifully designed and blazing-fast themes, we help businesses create fast, performance-focused, scalable & secure websites based on NextJs, Hugo, Astro, etc.
 
-If you need a custom theme, theme customization, or complete website development services from scratch you can [Hire Us](https://themefisher.com/contact). 
+If you need a custom theme, theme customization, or complete website development services from scratch you can [Hire Us](https://themefisher.com/contact).
