@@ -1,14 +1,14 @@
 {
   "site": {
-    "title": "Bigspring Light Astro",
+    "title": "Glocal limits",
     "base_url": "https://bigspring-light-astro.vercel.app",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
-    "logo_width": "200",
-    "logo_height": "38",
-    "logo_text": "Astroplate"
+    "logo": "/images/gl-logo-2024.svg",
+    "logo_width": "152",
+    "logo_height": "32",
+    "logo_text": "Glocal limits logo"
   },
 
   "settings": {
@@ -24,15 +24,15 @@
   },
 
   "params": {
-    "contact_form_action": "",
+    "contact_form_action": "https://formsubmit.co/ebdae2f48084014ea2b51eca03e54eb3",
     "tag_manager_id": "",
-    "footer_content": "Lorem ipsum dolor sit amet, consectetur elit. Consjat tristique eget amet, tempus eu at cttur.",
-    "copyright": "Designed and Developed By [Themefisher](https://themefisher.com/)"
+    "footer_content": "Together for a Sustainable Future: Empowering Choices for People and Planet.",
+    "copyright": "Designed and Developed By [Regeneralia](https://regeneralia.com/?utm_source=glocalimits&utm_medium=footer&utm_campaign=+/)"
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
+    "meta_author": "Regeneralia",
     "meta_image": "/images/og-image.png",
-    "meta_description": "astro boilerplate"
+    "meta_description": "Join us in empowering sustainable choices for a healthier planet. Discover eco-friendly products, community initiatives, and insights on reducing your carbon footprint. Together, we can make a difference!"
   }
 }

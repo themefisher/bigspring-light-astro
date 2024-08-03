@@ -3,52 +3,50 @@ title: Pricing
 description: "meta description"
 draft: false
 plans:
-- title: Basic Plan
-  subtitle: Best For Small Individuals
-  price: 49
-  type: month
-  features:
-    - Express Service
-    - Customs Clearance
-    - Time-Critical Services
-  button:
-    label: Get started for free
-    link: "/contact"
-
-- title: Professional Plan
-  subtitle: Best For Professionals
-  price: 69
-  type: month
+- title: UK CO2 Anual Neutrality Document
+  subtitle: 2,088 seeds for a Greener Tomorrow
+  price: 2088
+  type: one-off payment
   recommended: true
   features:
-    - Express Service
-    - Customs Clearance
-    - Time-Critical Services
-    - Cloud Service
-    - Best Dashboard
+    - Offsets over 10 tonnes of co2
+    - Impact Tracking 
+    - Certificate Issued
   button:
-    label: Get started
+    label: Make a Lasting Impact Today!
     link: "/contact"
 
-- title: Business Plan
-  subtitle: Best For Large Individuals
-  price: 99
+- title: UK CO2 Monthly Neutrality Subscription
+  subtitle: Grow 174 Trees Every Month
+  price: 174
   type: month
   features:
-    - Express Service
-    - Customs Clearance
-    - Time-Critical Services
+    - Neutralises 866 kg of Co2
+    - Automatic Planting
+    - Easy Cancellation
   button:
-    label: Get started
+    label: Commit to a Greener Future
+    link: "/contact"
+
+- title: Quick support to the Earth
+  subtitle: Plant 2 Trees
+  price: 2
+  type: one-off payment
+  features:
+    - Plant 2 Trees
+    - Swift Contribution
+    - Small Steps, Big Impact
+  button:
+    label: Support Reforestation Efforts Today!
     link: "/contact"
 
 call_to_action:
-  title: Need a larger plan?
-  content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur.
+  title: Bespoke Carbon Footprint Solutions
+  content: Evaluate your carbon footprint against your country’s average. If you’re below the average, you could save on offsetting costs! Fill in the contact form to start the process.
   image: '/images/cta.png'
   button:
     enable: true
-    label: "Contact Us"
+    label: "Let’s Make an Impact Together!"
     link: "/contact"
     
 ---
