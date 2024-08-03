@@ -14,7 +14,7 @@ plans:
     - Certificate Issued
   button:
     label: Make a Lasting Impact Today!
-    link: "/contact"
+    link: "https://buy.stripe.com/9AQ7vCenK2Bj6xW8wy"
 
 - title: UK CO2 Monthly Neutrality Subscription
   subtitle: Grow 174 Trees Every Month
@@ -26,7 +26,7 @@ plans:
     - Easy Cancellation
   button:
     label: Commit to a Greener Future
-    link: "/contact"
+    link: "https://buy.stripe.com/cN2g281AYfo56xW6ov"
 
 - title: Quick support to the Earth
   subtitle: Plant 2 Trees
@@ -38,7 +38,7 @@ plans:
     - Small Steps, Big Impact
   button:
     label: Support Reforestation Efforts Today!
-    link: "/contact"
+    link: "https://buy.stripe.com/aEU7vC4Naa3L09ydQV"
 
 call_to_action:
   title: Bespoke Carbon Footprint Solutions
