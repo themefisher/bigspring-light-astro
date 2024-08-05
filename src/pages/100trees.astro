@@ -1,0 +1,22 @@
+---
+import Base from "@/layouts/Base.astro";
+import type { TPostType, TPlan } from "@/types";
+import { getEntryBySlug } from "astro:content";
+
+const entry = (await getEntryBySlug("pricing", "index")) as TPostType;
+const { title, description, plans, call_to_action } = entry.data;
+---
+
+<Base title={title} description={description}>
+  <section class="section pb-0">
+    <div class="container">
+      <h1 class="text-center font-normal">Find the Right Payment Option for You</h1>
+      <div class="section row -mt-10 justify-center md:mt-0">
+        <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+<stripe-pricing-table pricing-table-id="prctbl_1PkP30Ly5p1yKYCnsixxQcoH"
+publishable-key="pk_live_51PHNQdLy5p1yKYCnQC3SXFpfmFax1LWmmUrh7m3TjT0BNoWZ0Y44J0XAIUtVNd8Rpc7QTln7OndtZIJaHOc7ICTn007iqYhQ1B">
+</stripe-pricing-table>
+      </div>
+    </div>
+  </section>
+</Base>

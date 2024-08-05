@@ -16,7 +16,7 @@ const { title, description, plans, call_to_action } = entry.data;
         {
           plans?.map((plan: TPlan) => (
             <div
-              class={`col-12 md:col-4 ${
+              class={`col-12 md:col-3 ${
                 !plan.recommended ? "lg:px-0" : "col-recommended"
               }`}
             >
