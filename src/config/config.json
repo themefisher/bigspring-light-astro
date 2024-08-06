@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Glocal limits",
-    "base_url": "https://bigspring-light-astro.vercel.app",
+    "base_url": "https://bcorporation-uk-glocallimits.netlify.app/",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
