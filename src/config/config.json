@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Glocal limits",
-    "base_url": "https://org-uk-glocalimits.netlify.app",
+    "base_url": "https://gl-safe-the-planet.netlify.app/",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
