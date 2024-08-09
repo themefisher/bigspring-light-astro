@@ -1,11 +1,11 @@
 ---
-title: "Contact Us"
+title: "Glocal limits"
 draft: false
 info: 
-  title: Start Your Bespoke Carbon Footprint Assessment!
-  description: If you’re interested in evaluating your carbon footprint and discovering potential savings, we’re here to assist you! Fill out the form to begin your personalised assessment or to ask any questions about our offsetting solutions. Your journey towards sustainability starts here, and together we can make a positive impact!
+  title: Join Our Initiative to Save the World!
+  description: Are you passionate about climate change and ready to make a difference? We seek committed and creative individuals from all backgrounds to collaborate on innovative projects that inspire action. Your contribution can have a real impact in your community and beyond. If you're eager to join us in this movement, please fill out the contact form below. We look forward to welcoming you on board!
   contacts: 
     - "Mail: [info@glocalimits.com](mailto:info@glocalimits.com)"
-    - "Address: 33 Fulton Rd, Sheffield S6 3JL"
+    - "Address: 296 Queens Rd, Lowfield, Sheffield S2 4DL"
 ---
 

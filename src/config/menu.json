@@ -5,10 +5,6 @@
       "url": "/"
     },
     {
-      "name": "Pricing",
-      "url": "/pricing"
-    },
-    {
       "name": "Contact",
       "url": "/contact"
     }
@@ -17,14 +13,6 @@
     {
       "name": "Menu",
       "menu": [
-        {
-          "text": "Pricing",
-          "url": "/pricing"
-        },
-        {
-          "text": "FAQ",
-          "url": "/faq"
-        },
         {
           "text": "Privacy Policy",
           "url": "/privacy-policy"

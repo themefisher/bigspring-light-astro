@@ -1,35 +1,35 @@
 ---
 banner:
-  title: Join Us in Creating a Sustainable Future
-  content: At Glocal Limits, we believe in empowering individuals to make a positive impact on the environment. Our carbon compensation plans are designed to help you reduce your carbon footprint while supporting glocal initiatives. Whether you're passionate about sustainable living or looking to inspire others, we have the resources to guide you on this journey
+  title: Every Small Action Counts; Join the Movement for Climate Change!
+  content: Taking action against climate change, even through small steps, can lead to significant collective impact. Each decision we make contributes to a healthier planet and a sustainable future for all. By embracing eco-friendly practices, we not only enhance our quality of life but also inspire others to join the cause. Together, we can create a ripple effect that drives meaningful change
   image: /images/banner-art.png
   button:
     label: "Explore Plans"
     link: "/pricing"
-    enable: true
+    enable: false
 
 # feature
 feature: 
-  title: Take Action for Our Planet
+  title: Empowering sustainable futures through key features for positive change
   features:
-  - name: "Eco-Friendly Practices"
-    icon: "/images/forest.svg"
-    content: "Efficient searches, greener choices"
-  - name: "Personalised Impact"
+  - name: "Future Choices"
     icon: "/images/eastern.svg"
-    content: "Tailored experience for eco-conscious users"
-  - name: "Always Here for You"
-    icon: "/images/support_agent.svg"
-    content: "Help available for your climate queries"
-  - name: "Affordable Sustainability"
-    icon: "/images/saving.svg"
-    content: "Value-driven solutions for a better planet"
-  - name: "Quick Action"
-    icon: "/images/bolt.svg"
-    content: "Fast results for informed eco-decisions"
-  - name: "Global Connectivity"
-    icon: "/images/monitoring.svg"
-    content: "Track your climate impact anytime, anywhere"
+    content: "Our current decisions shape a sustainable tomorrow"
+  - name: "Quality of Life"
+    icon: "/images/pulmonology.svg"
+    content: "Sustainable actions enhance well-being for all"
+  - name: "Creative Solutions"
+    icon: "/images/lightbulb.svg"
+    content: "Innovation drives the path to a carbon-neutral world"
+  - name: "Economic Benefits"
+    icon: "/images/savings.svg"
+    content: "Sustainability is not just possible; it’s profitable and creates jobs"
+  - name: "Future Preparedness"
+    icon: "/images/event_note.svg"
+    content: "Planning now ensures resilience against climate challenges"
+  - name: "Resource Resilience"
+    icon: "/images/cruelty_free.svg"
+    content: "Implementing existing solutions secures our resources"
 
       # services
 services:
@@ -84,15 +84,6 @@ services:
       label: Explore the Data
       link: https://www.fao.org/interactive/forest-resources-assessment/2020/en/
 
-  - title: "Ensuring Carbon Neutrality"
-    content: "We are committed to a sustainable future by calculating our tree planting quotas based on the tonnes of CO2 emitted per capita. We multiply this figure by 2.5, which represents the index of planets required based on resource consumption. This approach ensures we remain above carbon neutrality."
-    images:
-      - "/images/pexels-leiliane-dutra-1841922-11130997.jpg"
-    button:
-      enable: true
-      label: Check it out! 
-      link: /pricing 
-
 # workflow
 workflow: 
   title: "Join the Green Movement"
@@ -101,11 +92,11 @@ workflow:
 
 # call_to_action
 call_to_action:
-  title: Bespoke Carbon Footprint Solutions
-  content: Evaluate your carbon footprint compared to the average of your country. Fill in the contact form to start the process.
-  image: '/images/cta.png'
+  title: Make a Difference!
+  content: Join us in our mission to combat climate change. Every action matters, and together we can create a brighter future. Sign up now to stay informed and be part of the solution!.
+  image: 'https://images.pexels.com/photos/5677279/pexels-photo-5677279.jpeg?auto=compress&cs=tinysrgb&w=430&h=240&dpr=1'
   button:
     enable: true
-    label: "Let’s Make An Impact Together!"
+    label: "Acting Together!"
     link: "/contact"
 ---
