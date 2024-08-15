@@ -101,11 +101,11 @@ workflow:
 
 # call_to_action
 call_to_action:
-  title: Bespoke Carbon Footprint Solutions
-  content: Evaluate your carbon footprint compared to the average of your country. Fill in the contact form to start the process.
-  image: '/images/cta.png'
+  title: Plant Trees for Just £1 Each
+  content: Contributing to the offset of approximately 10 kg of CO2 for every two trees. Each British citizen should aim to plant around 2,088 trees to compensate for the more than 5.4 tonnes of CO2 emitted in a year. Join our initiative and plant as many trees as you wish to make a real difference in our environment!
+  image: 'https://images.pexels.com/photos/27644539/pexels-photo-27644539/free-photo-of-madera-amanecer-paisaje-naturaleza.jpeg?auto=compress&cs=tinysrgb&w=430&h=240&dpr=1'
   button:
     enable: true
     label: "Let’s Make An Impact Together!"
-    link: "/contact"
+    link: "https://buy.stripe.com/8wM3fmbby0tbaOc7sD"
 ---
