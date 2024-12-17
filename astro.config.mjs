@@ -53,4 +53,11 @@ export default defineConfig({
     },
     extendDefaultPlugins: true,
   },
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+      },
+    },
+  },
 });

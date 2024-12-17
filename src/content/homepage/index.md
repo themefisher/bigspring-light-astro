@@ -1,7 +1,8 @@
 ---
 banner:
-  title: Let us solve your critical website development challenges
-  content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime corporis cumque <br/> totam aliquid nam sint inventore optio modi neque laborum officiis necessitatibus
+  title: "From Complexity to Clarity: We Solve Your Observability & Monitoring Challenges"
+  # TODO: Figure out how to add new lines to this. I think src/pages/index.astro needs to be modified to accept multiple content blocks
+  content: "In today's fast-paced, digitally-driven world, staying ahead means seeing the unseen. That’s where we come in.NEWLINE At The Melt Cafe we specialize in unlocking the power of observability. We help businesses gain crystal-clear insights into their systems, processes and customer experiences. From pinpointing bottlenecks to predicting issues before they arise, we empower you to move faster, work smarter, and deliver exceptional outcomes.NEWLINE With our expertise, visibility isn’t just a buzzword, it’s your competitive edge. Let’s make the invisible, visible together. TODO Figure out how to add new lines on this"
   image: /images/banner-art.png
   button:
     label: "Contact Us"
@@ -10,26 +11,26 @@ banner:
 
 # feature
 feature: 
-  title: Something You Need To Know
+  title: Who are The Melt Cafe?
   features:
-  - name: "Clean Code"
-    icon: "/images/code.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Object Oriented"
+  - name: "Observability Oracles"
+    icon: "/images/book-solid.svg"
+    content: "We are experts in observability, we even wrote a book!"
+  - name: "Migration Maestros"
     icon: "/images/oop.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "24h Service"
+    content: "We have a proven track record of leading successful migrations"
+  - name: "Talented Trainers"
     icon: "/images/user-clock.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Value for Money"
+    content: "We love to teach teams to use their tools efficiently and effectively"
+  - name: "Cost Killers"
     icon: "/images/love.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Faster Response"
+    content: "We can make your observability tools lean and cost-effective"
+  - name: "Alert Wranglers"
     icon: "/images/speedometer.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Cloud Support"
+    content: "We've led teams through alert fatigue and addressed the underlying issues"
+  - name: "Code Instrumenters"
     icon: "/images/cloud.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
+    content: "We can lower the common first hurdle of instrumenting code with your teams"
 
 # services
 services:
