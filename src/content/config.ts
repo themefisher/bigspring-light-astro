@@ -146,8 +146,8 @@ export interface PageData {
 export const collections = {
   blog: postsCollection,
   pages: pagesCollection,
-  // homepage: homepage,
-  // contact: contact_page,
-  // faq: faq_page,
-  // pricing: pricing_page
+  homepage: homepage,
+  contact: contact_page,
+  faq: faq_page,
+  pricing: pricing_page
 };

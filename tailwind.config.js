@@ -25,7 +25,9 @@ if (theme.fonts.font_family.secondary) {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  safelist: [{ pattern: /^swiper-/ }],
+  // 2024-12-17 PH removed as I was seeing warning messages after upgrade of packages
+  // The safelist pattern `/^swiper-/` doesn't match any Tailwind CSS classes.
+  // safelist: [{ pattern: /^swiper-/ }],
   darkMode: "class",
   theme: {
     screens: {
