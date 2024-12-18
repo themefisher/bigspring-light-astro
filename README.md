@@ -1,5 +1,5 @@
-<h1 align=center>Bigspring Light Astro</h1>
-<p align=center>Bigspring is a highly customizable Astro theme designed specifically for SaaS & marketing websites.  
+<h1 align=center>The Melt Cafe Website</h1>
+<p align=center>Built on Astro using the Bigspring template.  
 </p>
 <h2 align="center"> <a target="_blank" href="https://tf-bigspring-light-astro.vercel.app/" rel="nofollow">👀Demo</a> | <a  target="_blank" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fbigspring-light-astro.vercel.app%2F&form_factor=desktop">Page Speed (100%)🚀</a>
 </h2>
