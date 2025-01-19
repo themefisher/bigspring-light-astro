@@ -1,9 +1,10 @@
 ---
 import Base from "@/layouts/Base.astro";
 import { markdownify } from "@/lib/utils/textConverter";
-import { getEntryBySlug } from "astro:content";
-import type { TPostType } from "@/types";
-const entry = (await getEntryBySlug("faq", "index")) as TPostType;
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
+
+const entry = (await getEntry("faq", "-index")) as CollectionEntry<"faq">;
 const { title, description, faqs } = entry.data;
 ---
 

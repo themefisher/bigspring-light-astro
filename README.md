@@ -5,8 +5,8 @@
 </h2>
 
 <p align=center>
-  <a href="https://github.com/withastro/astro/releases/tag/astro%404.3.2" alt="Contributors">
-    <img src="https://img.shields.io/static/v1?label=ASTRO&message=4.3&color=000&logo=astro" />
+  <a href="https://github.com/withastro/astro/releases/tag/astro%405.1.7" alt="Contributors">
+    <img src="https://img.shields.io/static/v1?label=ASTRO&message=5.1&color=000&logo=astro" />
   </a>
 
   <a href="https://github.com/themefisher/bigspring-light-astro/blob/main/LICENSE">
@@ -20,7 +20,7 @@
 
 ![bigspring-light](https://demo.gethugothemes.com/thumbnails/bigspring-light.png)
 
-Bigspring is a beautifully designed & highly customizable Astro theme created specifically for SaaS & marketing websites.  Users can customize the color scheme, fonts, menu, social links,  etc. and update the content easily based on their requirements. Bigspring is the perfect theme for showcasing your SaaS products or services and connecting with customers.
+Bigspring is a beautifully designed & highly customizable Astro theme created specifically for SaaS & marketing websites. Users can customize the color scheme, fonts, menu, social links, etc. and update the content easily based on their requirements. Bigspring is the perfect theme for showcasing your SaaS products or services and connecting with customers.
 
 ## 🔑Key Features
 
@@ -51,6 +51,7 @@ Bigspring is a beautifully designed & highly customizable Astro theme created sp
 - 📜 Terms & Conditions
 - 🚧 404 Page
 <!-- installation -->
+
 ## ⚙️Installation
 
 After downloading the template, you have some prerequisites to install. Then you can run it on your localhost. You can view the package.json file to see which scripts are included.
@@ -86,12 +87,14 @@ npm run build
 ```
 
 <!-- reporting issue -->
+
 ## 🐞Reporting Issues
 
 We use GitHub Issues as the official bug tracker for this Template. Please Search [existing issues](https://github.com/themefisher/bigspring-light-astro/issues). It’s possible someone has already reported the same problem.
 If your problem or idea has not been addressed yet, feel free to [open a new issue](https://github.com/themefisher/bigspring-light-astro/issues).
 
 <!-- licence -->
+
 ## 📄License
 
 Copyright (c) 2016 - Present, Designed & Developed by [Themefisher](https://themefisher.com)

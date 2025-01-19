@@ -1,10 +1,13 @@
 ---
 import Base from "@/layouts/Base.astro";
 import Cta from "@/layouts/components/Cta.astro";
-import type { TPostType, TPlan } from "@/types";
-import { getEntryBySlug } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
 
-const entry = (await getEntryBySlug("pricing", "index")) as TPostType;
+const entry = (await getEntry(
+  "pricing",
+  "-index"
+)) as CollectionEntry<"pricing">;
 const { title, description, plans, call_to_action } = entry.data;
 ---
 
@@ -14,7 +17,7 @@ const { title, description, plans, call_to_action } = entry.data;
       <h1 class="text-center font-normal">{title}</h1>
       <div class="section row -mt-10 justify-center md:mt-0">
         {
-          plans?.map((plan: TPlan) => (
+          plans?.map((plan) => (
             <div
               class={`col-12 md:col-4 ${
                 !plan.recommended ? "lg:px-0" : "col-recommended"
@@ -28,7 +31,7 @@ const { title, description, plans, call_to_action } = entry.data;
                 </div>
                 <h5 class="mt-2 font-normal text-text">{plan.subtitle}</h5>
                 <ul class="mt-5">
-                  {plan?.features?.map((feature, index) => (
+                  {plan?.features?.map((feature) => (
                     <li class="mb-[10px] leading-5">{feature}</li>
                   ))}
                 </ul>

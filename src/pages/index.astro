@@ -3,9 +3,13 @@ import { Image } from "astro:assets";
 import Base from "@/layouts/Base.astro";
 import Cta from "@/layouts/components/Cta.astro";
 import { markdownify } from "@/lib/utils/textConverter";
-import { getEntryBySlug } from "astro:content";
+import { getEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
-const homepage = await getEntryBySlug("homepage", "index");
+const homepage = (await getEntry(
+  "homepage",
+  "-index"
+)) as CollectionEntry<"homepage">;
 const { banner, feature, services, workflow, call_to_action } = homepage.data;
 ---
 
@@ -50,21 +54,14 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
   <section class="section bg-theme-light">
     <div class="container">
       <div class="text-center">
-        <h2>{markdownify(feature!.title)}</h2>
+        <h2>{markdownify(feature.title)}</h2>
       </div>
       <div class="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
         {
-          feature!.features.map((item: any, i: number) => (
+          feature.features.map((item) => (
             <div class="feature-card rounded-xl bg-white p-5 pb-8 text-center">
               {item.icon && (
-                // <Image
-                //   class="mx-auto"
-                //   src={item.icon}
-                //   width={30}
-                //   height={30}
-                //   alt=""
-                // />
-                <img
+                <Image
                   class="mx-auto"
                   alt={item.icon}
                   src={item.icon}
@@ -73,7 +70,7 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
                 />
               )}
               <div class="mt-4">
-                <p class="h5" set:html={markdownify(item!.name)} />
+                <p class="h5" set:html={markdownify(item.name)} />
                 <p class="mt-3">{item.content}</p>
               </div>
             </div>
@@ -85,7 +82,7 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
 
   <!-- Services -->
   {
-    services!.map((service: any, index: number) => {
+    services!.map((service, index) => {
       const isOdd = index % 2 > 0;
       return (
         <section class={`section ${isOdd && "bg-theme-light"}`}>
@@ -95,7 +92,7 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
                 {service!.images!.length > 1 ? (
                   <div class="swiper">
                     <div class="swiper-wrapper">
-                      {service!.images?.map((image: string) => (
+                      {service.images?.map((image) => (
                         <div class="swiper-slide">
                           <Image
                             class="mx-auto"
@@ -148,29 +145,7 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
       );
     })
   }
-
-  <script>
-    import { Swiper } from "swiper";
-    import "swiper/css";
-    import "swiper/css/pagination";
-    import { Autoplay, Pagination } from "swiper/modules";
-
-    // astro:page-load event is fired when the page is loaded
-    document.addEventListener("astro:page-load", () => {
-      new Swiper(".service-carousel .swiper", {
-        modules: [Pagination, Autoplay],
-        autoplay: {
-          delay: 3000,
-        },
-        pagination: {
-          type: "bullets",
-          el: ".service-carousel .pagination",
-          clickable: true,
-        },
-      });
-    });
-  </script>
-  <!-- ./End service -->
+  <!-- /End service -->
 
   <!-- Workflow -->
   <section class="section pb-0">
@@ -192,3 +167,25 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
   <!-- Call to Action -->
   <Cta cta={call_to_action} />
 </Base>
+
+<script>
+  import { Swiper } from "swiper";
+  import "swiper/css";
+  import "swiper/css/pagination";
+  import { Autoplay, Pagination } from "swiper/modules";
+
+  // astro:page-load event is fired when the page is loaded
+  document.addEventListener("astro:page-load", () => {
+    new Swiper(".service-carousel .swiper", {
+      modules: [Pagination, Autoplay],
+      autoplay: {
+        delay: 3000,
+      },
+      pagination: {
+        type: "bullets",
+        el: ".service-carousel .pagination",
+        clickable: true,
+      },
+    });
+  });
+</script>

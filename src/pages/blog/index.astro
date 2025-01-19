@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import Pagination from "@/layouts/components/Pagination.astro";
@@ -7,16 +6,13 @@ import Post from "@/layouts/partials/Post.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import { sortByDate } from "@/lib/utils/sortFunctions";
 import { markdownify, plainify } from "@/lib/utils/textConverter";
-import { getEntryBySlug } from "astro:content";
-import type { TIndexData } from "@/types";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
 
-const { blog_folder, summary_length } = config.settings;
-
-const postIndex = (await getEntryBySlug<any, string>(
-  blog_folder,
-  "index",
-)) as TIndexData;
-const posts = await getSinglePage(blog_folder as any);
+const { summary_length } = config.settings;
+const postIndex = (await getEntry("blog", "-index")) as CollectionEntry<"blog">;
+const posts = await getSinglePage("blog");
 const sortedPosts = sortByDate(posts);
 const totalPages = Math.ceil(posts.length / config.settings.pagination);
 const currentPosts = sortedPosts.slice(0, config.settings.pagination);
@@ -47,7 +43,7 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
           <div class="md:col-6">
             <h2 class="h3 mb-2 mt-4">
               <a
-                href={`/${blog_folder}/${currentPosts[0].slug}`}
+                href={`/blog/${currentPosts[0].id}`}
                 class="block hover:text-primary"
               >
                 {currentPosts[0].data.title}
@@ -58,7 +54,7 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
             />
             <a
               class="btn btn-primary mt-4"
-              href={`/${blog_folder}/${currentPosts[0].slug}`}
+              href={`/blog/${currentPosts[0].id}`}
               rel=""
             >
               Read More
@@ -73,11 +69,7 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
           ))
         }
       </div>
-      <Pagination
-        section={blog_folder}
-        currentPage={1}
-        totalPages={totalPages}
-      />
+      <Pagination section={"blog"} currentPage={1} totalPages={totalPages} />
     </div>
   </section>
 </Base>
