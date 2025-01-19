@@ -13,8 +13,7 @@
 
   "settings": {
     "pagination": 4,
-    "summary_length": 200,
-    "blog_folder": "blog"
+    "summary_length": 200
   },
 
   "nav_button": {

@@ -2,11 +2,15 @@
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import { markdownify } from "@/lib/utils/textConverter";
-import { getEntryBySlug } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
 
-const entry = await getEntryBySlug("contact", "index");
+const entry = (await getEntry(
+  "contact",
+  "-index"
+)) as CollectionEntry<"contact">;
 const { contact_form_action } = config.params;
-const { title, description, info } = entry?.data;
+const { title, description, info } = entry.data;
 ---
 
 <Base title={title} description={description}>
@@ -57,7 +61,7 @@ const { title, description, info } = entry?.data;
           <p class="mt-4" set:html={markdownify(info?.description)} />
           <ul class="contact-list mt-5 list-none pl-0">
             {
-              info?.contacts?.map((contact: string) => (
+              info?.contacts?.map((contact) => (
                 <li>
                   <strong class="text-dark" set:html={markdownify(contact)} />
                 </li>

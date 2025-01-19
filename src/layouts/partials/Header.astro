@@ -3,7 +3,7 @@ import Logo from "@/components/Logo.astro";
 import { nav_button } from "@/config/config.json";
 import menu from "@/config/menu.json";
 
-const pathname = new URL(Astro.request.url).pathname;
+const pathname = Astro.url.pathname;
 
 export interface ChildNavigationLink {
   name: string;

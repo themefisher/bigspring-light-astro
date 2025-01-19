@@ -1,11 +1,11 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
+import { render } from "astro:content";
 
 const { post } = Astro.props;
-const { Content } = await post.render();
-const { title, image } =
-  post.data;
+const { Content } = await render(post);
+const { title, image } = post.data;
 ---
 
 <section class="section">
@@ -25,15 +25,12 @@ const { title, image } =
             )
           }
           <h1 set:html={markdownify(title)} class="h2 text-left my-6" />
-    
+
           <div class="content mb-16 text-left">
             <Content />
-            <!-- <Markdown content={post.body} components={shortcodes} /> -->
           </div>
-          
         </article>
       </div>
     </div>
   </div>
 </section>
-
