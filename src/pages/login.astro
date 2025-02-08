@@ -1,0 +1,94 @@
+---
+import BaseForForms from "@/layouts/BaseForForms.astro";
+import { FaGoogle, FaGithub } from "react-icons/fa";
+const title = "Login";
+
+const description = "Login to your account";
+---
+
+<BaseForForms title={title} description={description}>
+    <div class="mx-auto flex w-full flex-col justify-center pt-0 max-w-md">
+        <div class="my-auto mb-auto flex flex-col">
+            <a href="/" class="underline">abrir inicio - esto no es parte del diseño</a>
+            <p class="text-[32px] font-bold text-primary flex gap-4"><img src="/images/logo.png" alt="logo" class="h-6"><span>Iniciar sesión</span></p>
+            <div class="relative my-4">
+                <div class="relative flex items-center py-1">
+                    <div class="grow border-t border-neutral-200"></div>
+                    <div class="grow border-t border-neutral-200"></div>
+                </div>
+            </div>
+            <div>
+                <form novalidate="" class="mb-4">
+                    <div class="grid gap-2">
+                        <div class="grid gap-1">
+                            <label class="text-neutral-950" for="email">Correo</label><input
+                                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
+                                placeholder="nombre@ejemplo.com"
+                                type="email"
+                                autocapitalize="none"
+                                autocomplete="email"
+                                autocorrect="off"
+                                name="email"
+                            />
+
+                            <span class="text-red-500 text-sm">Hubo un error</span>
+
+                            <label class="text-neutral-950 mt-2" for="password"
+                                >Contraseña</label
+                            ><input
+                                placeholder="Contraseña"
+                                type="password"
+                                autocomplete="current-password"
+                                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
+                            />
+
+                            <span class="text-red-500 text-sm">Hubo un error</span>
+                            <p>
+                                <a
+                                    href="/dashboard/signin/forgot_password"
+                                    class="font-medium text-neutral-500 text-sm hover:underline"
+                                    >Olvidaste tu contraseña?</a
+                                >
+                            </p>
+                        </div>
+                        <button
+                            class="mt-4 w-full border-2 border-primary bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-primary-dark transition duration-300"
+                            type="submit">Iniciar sesión</button
+                        >
+
+                        <div class="flex justify-center mt-4 gap-6">
+                            <p>
+                                <a
+                                    href="/register"
+                                    class="font-medium text-neutral-500 text-sm hover:underline"
+                                    >¿No tienes una cuenta? Regístrate</a
+                                >
+                            </p>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="relative my-4">
+                    <div class="relative flex items-center py-1">
+                        <div class="grow border-t border-neutral-200"></div>
+                        <span class="bg-white px-6 py-2">ó</span>
+                        <div class="grow border-t border-neutral-200"></div>
+                    </div>
+                </div>
+
+                <div class="w-full gap-4 flex">
+                    <button
+                        class="w-full border-2 border-red-500 bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex justify-center items-center hover:bg-red-600 transition duration-300"
+                    >
+                        <span class="mr-2"><FaGoogle /></span><span>Google</span>
+                    </button>
+                    <button
+                        class="w-full border-2 border-neutral-950 bg-neutral-950 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex justify-center items-center hover:bg-neutral-700 transition duration-300"
+                    >
+                        <span class="mr-2"><FaGithub /></span><span>Github</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</BaseForForms>

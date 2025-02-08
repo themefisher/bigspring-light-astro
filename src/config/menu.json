@@ -1,19 +1,19 @@
 {
   "main": [
     {
-      "name": "Home",
+      "name": "Cursos",
       "url": "/"
     },
     {
-      "name": "Blog",
+      "name": "Novedades",
       "url": "/blog"
     },
     {
-      "name": "Pricing",
+      "name": "Suscripción",
       "url": "/pricing"
     },
     {
-      "name": "Contact",
+      "name": "Contacto",
       "url": "/contact"
     },
     {
@@ -21,54 +21,54 @@
       "url": "/faq"
     },
     {
-      "name": "Elements",
+      "name": "DC",
       "url": "/elements"
     }
   ],
   "footer": [
     {
-      "name": "Company",
+      "name": "Compañía",
       "menu": [
         {
-          "text": "Pricing",
+          "text": "Productos",
           "url": "/pricing"
         },
         {
-          "text": "Quick Start",
+          "text": "Acerca de",
           "url": "#"
         }
       ]
     },
     {
-      "name": "Product",
+      "name": "Productos",
       "menu": [
         {
-          "text": "Features",
+          "text": "Características",
           "url": "#"
         },
         {
-          "text": "Platform",
+          "text": "Plataforma",
           "url": "#"
         },
         {
-          "text": "Pricing",
+          "text": "Precios",
           "url": "/pricing"
         }
       ]
     },
     {
-      "name": "Support",
+      "name": "Soporte",
       "menu": [
         {
           "text": "FAQ",
           "url": "/faq"
         },
         {
-          "text": "Privacy Policy",
+          "text": "Avisos legales",
           "url": "/privacy-policy"
         },
         {
-          "text": "Terms & Conditions",
+          "text": "Terminos y condiciones",
           "url": "/terms-conditions"
         }
       ]

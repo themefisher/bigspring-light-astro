@@ -1,14 +1,14 @@
 {
   "site": {
-    "title": "Bigspring Light Astro",
-    "base_url": "https://bigspring-light-astro.vercel.app",
+    "title": "Schola",
+    "base_url": "http://localhost:4322/",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
+    "favicon": "/images/favicon.svg",
     "logo": "/images/logo.png",
     "logo_width": "200",
-    "logo_height": "38",
-    "logo_text": "Astroplate"
+    "logo_height": "60",
+    "logo_text": "Aprende con Schola"
   },
 
   "settings": {
@@ -18,20 +18,20 @@
 
   "nav_button": {
     "enable": true,
-    "label": "Get Started",
-    "link": "/contact"
+    "label": "Cerrar Sesión",
+    "link": "/login"
   },
 
   "params": {
     "contact_form_action": "",
     "tag_manager_id": "",
-    "footer_content": "Lorem ipsum dolor sit amet, consectetur elit. Consjat tristique eget amet, tempus eu at cttur.",
-    "copyright": "Designed and Developed By [Themefisher](https://themefisher.com/)"
+    "footer_content": "Visita nuestras redes sociales en las ligas de abajo",
+    "copyright": "Designed and Developed By CEyED"
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
+    "meta_author": "CEyED",
     "meta_image": "/images/og-image.png",
-    "meta_description": "astro boilerplate"
+    "meta_description": "Schola es una plataforma de aprendizaje en línea"
   }
 }

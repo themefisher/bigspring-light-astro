@@ -1,0 +1,75 @@
+---
+import BaseForForms from "@/layouts/BaseForForms.astro";
+import { FaGoogle, FaGithub } from "react-icons/fa";
+const title = "Login";
+
+const description = "Login to your account";
+---
+
+<BaseForForms title={title} description={description}>
+    <div class="mx-auto flex w-full flex-col justify-center pt-0 max-w-md">
+        <div class="my-auto mb-auto flex flex-col">
+            <p class="text-[32px] font-bold text-primary flex gap-4"><img src="/images/logo.png" alt="logo" class="h-6"><span>Registrar cuenta</span></p>
+            <div class="relative my-4">
+                <div class="relative flex items-center py-1">
+                    <div class="grow border-t border-neutral-200"></div>
+                    <div class="grow border-t border-neutral-200"></div>
+                </div>
+            </div>
+            <div>
+                <form novalidate="" class="mb-4">
+                    <div class="grid gap-2">
+                        <div class="grid gap-1">
+                            <label class="text-neutral-950" for="email">Correo</label><input
+                                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
+                                placeholder="nombre@ejemplo.com"
+                                type="email"
+                                autocapitalize="none"
+                                autocomplete="email"
+                                autocorrect="off"
+                                name="email"
+                            />
+
+                            <span class="text-red-500 text-sm">Hubo un error</span>
+
+                            <label class="text-neutral-950 mt-2" for="password"
+                                >Contraseña</label
+                            ><input
+                                placeholder="Contraseña"
+                                type="password"
+                                autocomplete="current-password"
+                                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
+                            />
+
+                            <span class="text-red-500 text-sm">Hubo un error</span>
+                            <label class="text-neutral-950 mt-2" for="password"
+                                >Confirmar contraseña</label
+                            ><input
+                                placeholder="Contraseña"
+                                type="password"
+                                autocomplete="current-password"
+                                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
+                            />
+
+                            <span class="text-red-500 text-sm">Hubo un error</span>
+                        </div><button
+                            class="mt-4 w-full border-2 border-primary bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-primary-dark transition duration-300"
+                            type="submit">Registrar</button
+                        >
+
+                        <div class="flex justify-center mt-4 gap-6">
+                            <p>
+                                <a
+                                    href="/login"
+                                    class="font-medium text-neutral-500 text-sm hover:underline"
+                                    >¿Ya tienes una cuenta?</a
+                                >
+                            </p>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</BaseForForms>
