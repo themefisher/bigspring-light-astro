@@ -1,5 +1,5 @@
 ---
-import Logo from "@/components/Logo.astro";
+import { ReactNanoStore } from "@/components/ReactNanoStore";
 import { nav_button } from "@/config/config.json";
 import menu from "@/config/menu.json";
 
@@ -23,8 +23,9 @@ const { main }: { main: NavigationLink[] } = menu;
 <header class="header">
   <nav class="navbar container">
     <!-- logo -->
-    <a href="/" class="order-0 flex items-center text-2xl gap-2 ">
-       <span class="font-bold text-primary">Schola</span> <img src="/images/logo.png" alt="logo" class="h-6">
+    <a href="/" class="order-0 flex items-center text-2xl gap-2">
+      <span class="font-bold text-primary">Schola</span>
+      <img src="/images/logo.png" alt="logo" class="h-6" />
     </a>
     <!-- navbar toggler -->
     <input id="nav-toggle" type="checkbox" class="hidden" />
@@ -113,14 +114,30 @@ const { main }: { main: NavigationLink[] } = menu;
     {
       nav_button.enable && (
         <div class="order-1 ml-auto hidden items-center md:order-2 md:ml-0 md:flex md:min-w-[150px] lg:min-w-[200px]">
-          <a
+          <button
+            id="logout"
             class="btn btn-primary z-0 ml-auto py-[14px]"
-            href={nav_button.link}
           >
             {nav_button.label}
-          </a>
+          </button>
         </div>
       )
     }
   </nav>
 </header>
+
+<script>
+  "astro:page-load";
+  import { actions } from "astro:actions";
+
+  document.addEventListener("astro:page-load", () => {
+    const $logoutButton = document.getElementById(
+      "logout"
+    ) as HTMLAnchorElement;
+
+    $logoutButton.addEventListener("click", async () => {
+      await actions.logout();
+      window.location.replace("/login");
+    });
+  });
+</script>

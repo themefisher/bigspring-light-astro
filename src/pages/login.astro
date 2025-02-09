@@ -1,5 +1,6 @@
 ---
 import BaseForForms from "@/layouts/BaseForForms.astro";
+import { LoginForm } from "@/react-components/LoginForm.tsx";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 const title = "Login";
 
@@ -7,88 +8,205 @@ const description = "Login to your account";
 ---
 
 <BaseForForms title={title} description={description}>
-    <div class="mx-auto flex w-full flex-col justify-center pt-0 max-w-md">
-        <div class="my-auto mb-auto flex flex-col">
-            <a href="/" class="underline opacity-50">abrir inicio - esto no es parte del diseño</a>
-            <p class="text-[32px] font-bold text-primary flex gap-4"><img src="/images/logo.png" alt="logo" class="h-6"><span>Iniciar sesión</span></p>
-            <div class="relative my-4">
-                <div class="relative flex items-center py-1">
-                    <div class="grow border-t border-neutral-200"></div>
-                    <div class="grow border-t border-neutral-200"></div>
-                </div>
-            </div>
-            <div>
-                <form novalidate="" class="mb-4">
-                    <div class="grid gap-2">
-                        <div class="grid gap-1">
-                            <label class="text-neutral-950" for="email">Correo</label><input
-                                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
-                                placeholder="nombre@ejemplo.com"
-                                type="email"
-                                autocapitalize="none"
-                                autocomplete="email"
-                                autocorrect="off"
-                                name="email"
-                            />
-
-                            <span class="text-red-500 text-sm">Hubo un error</span>
-
-                            <label class="text-neutral-950 mt-2" for="password"
-                                >Contraseña</label
-                            ><input
-                                placeholder="Contraseña"
-                                type="password"
-                                autocomplete="current-password"
-                                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
-                            />
-
-                            <span class="text-red-500 text-sm">Hubo un error</span>
-                            <p>
-                                <a
-                                    href="/dashboard/signin/forgot_password"
-                                    class="font-medium text-neutral-500 text-sm hover:underline"
-                                    >Olvidaste tu contraseña?</a
-                                >
-                            </p>
-                        </div>
-                        <button
-                            class="mt-4 w-full border-2 border-primary bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-primary-dark transition duration-300"
-                            type="submit">Iniciar sesión</button
-                        >
-
-                        <div class="flex justify-center mt-4 gap-6">
-                            <p>
-                                <a
-                                    href="/register"
-                                    class="font-medium text-neutral-500 text-sm hover:underline"
-                                    >¿No tienes una cuenta? Regístrate</a
-                                >
-                            </p>
-                        </div>
-                    </div>
-                </form>
-
-                <div class="relative my-4">
-                    <div class="relative flex items-center py-1">
-                        <div class="grow border-t border-neutral-200"></div>
-                        <span class="bg-white px-6 py-2">ó</span>
-                        <div class="grow border-t border-neutral-200"></div>
-                    </div>
-                </div>
-
-                <div class="w-full gap-4 flex">
-                    <button
-                        class="w-full border-2 border-red-500 bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex justify-center items-center hover:bg-red-600 transition duration-300"
-                    >
-                        <span class="mr-2"><FaGoogle /></span><span>Google</span>
-                    </button>
-                    <button
-                        class="w-full border-2 border-neutral-950 bg-neutral-950 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex justify-center items-center hover:bg-neutral-700 transition duration-300"
-                    >
-                        <span class="mr-2"><FaGithub /></span><span>Github</span>
-                    </button>
-                </div>
-            </div>
+  <div class="mx-auto flex w-full flex-col justify-center pt-0 max-w-md">
+    <div class="my-auto mb-auto flex flex-col">
+      <p class="text-[32px] font-bold text-primary flex gap-4">
+        <img src="/images/logo.png" alt="logo" class="h-6" /><span
+          >Iniciar sesión</span
+        >
+      </p>
+      <div class="relative my-4">
+        <div class="relative flex items-center py-1">
+          <div class="grow border-t border-neutral-200"></div>
+          <div class="grow border-t border-neutral-200"></div>
         </div>
+      </div>
+      <div>
+        <form class="mb-4" id="login-form">
+          <div class="grid gap-2">
+            <div class="grid gap-1">
+              <label class="text-neutral-950">Correo</label>
+              <input
+                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
+                placeholder="nombre@ejemplo.com"
+                type="email"
+                name="email"
+              />
+
+              <label class="text-neutral-950 mt-2">Contraseña</label>
+              <input
+                placeholder="Contraseña"
+                type="password"
+                name="password"
+                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
+              />
+
+              <p>
+                <a
+                  href="/reset-password"
+                  class="font-medium text-neutral-500 text-sm hover:underline"
+                >
+                  Olvidaste tu contraseña?
+                </a>
+              </p>
+            </div>
+            <button
+              id="btn-submit"
+              class="mt-4 w-full border-2 border-primary bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-primary-dark transition duration-300"
+              type="submit"
+            >
+              Iniciar sesión
+            </button>
+
+            <div class="flex justify-center mt-4 gap-6">
+              <p>
+                <a
+                  href="/register"
+                  class="font-medium text-neutral-500 text-sm hover:underline"
+                >
+                  ¿No tienes una cuenta? Regístrate
+                </a>
+              </p>
+            </div>
+          </div>
+        </form>
+
+        <div class="relative my-4">
+          <div class="relative flex items-center py-1">
+            <div class="grow border-t border-neutral-200"></div>
+            <span class="bg-white px-6 py-2">ó</span>
+            <div class="grow border-t border-neutral-200"></div>
+          </div>
+        </div>
+
+        <div class="w-full gap-4 flex">
+          <button
+            type="button"
+            id="btn-google"
+            class="w-full border-2 border-red-500 bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex justify-center items-center hover:bg-red-600 transition duration-300"
+          >
+            <span class="mr-2"><FaGoogle /></span><span>Google</span>
+          </button>
+          <button
+            type="button"
+            id="btn-github"
+            class="w-full border-2 border-neutral-950 bg-neutral-950 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex justify-center items-center hover:bg-neutral-700 transition duration-300"
+          >
+            <span class="mr-2"><FaGithub /></span><span>Github</span>
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
 </BaseForForms>
+
+<script>
+  "astro:load";
+
+  import { actions } from "astro:actions";
+  import {
+    GithubAuthProvider,
+    GoogleAuthProvider,
+    signInWithPopup,
+  } from "firebase/auth";
+  import Swal from "sweetalert2";
+  import { firebase } from "../firebase/config";
+
+  document.addEventListener("astro:page-load", () => {
+    const $form = document.querySelector("#login-form") as HTMLFormElement;
+    const $btnGoogle = document.querySelector(
+      "#btn-google"
+    ) as HTMLButtonElement;
+    const $btnGithub = document.querySelector(
+      "#btn-github"
+    ) as HTMLButtonElement;
+
+    $form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData($form);
+
+      const { email, password } = Object.fromEntries(formData);
+
+      const passwordRegex =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
+      const emaliRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      const isValidEmail = (email as String).match(emaliRegex);
+      const isValidPassword = (password as String).match(passwordRegex);
+
+      if (!isValidEmail) {
+        showError(new Error("El correo electrónico no es válido"));
+        return;
+      }
+
+      if (!isValidPassword) {
+        showError(
+          new Error(
+            "La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número"
+          )
+        );
+        return;
+      }
+
+      const { error } = await actions.loginUser(formData);
+
+      if (error) {
+        showError(error);
+        return;
+      }
+      window.location.href = "/";
+    });
+
+    $btnGoogle.addEventListener("click", async () => {
+      $btnGoogle.disabled = true;
+      const provider = new GoogleAuthProvider();
+
+      try {
+        const credentials = await signInWithPopup(firebase.auth, provider);
+
+        const { error } = await actions.loginGoogleUser(credentials);
+
+        if (error) {
+          showError(error);
+          $btnGoogle.disabled = false;
+          return;
+        }
+
+        $btnGoogle.innerText = "Redireccionando...";
+        window.location.href = "/";
+      } catch (error) {
+        $btnGoogle.disabled = false;
+      }
+    });
+
+    $btnGithub.addEventListener("click", async () => {
+      $btnGithub.disabled = true;
+      const provider = new GithubAuthProvider();
+
+      try {
+        const credentials = await signInWithPopup(firebase.auth, provider);
+
+        const { error } = await actions.loginGithubUser(credentials);
+
+        if (error) {
+          showError(error);
+          $btnGithub.disabled = false;
+          return;
+        }
+
+        $btnGithub.innerText = "Redireccionando...";
+        window.location.href = "/";
+      } catch (error) {
+        $btnGithub.disabled = false;
+      }
+    });
+  });
+
+  const showError = (error: Error) => {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: error.message,
+    });
+  };
+</script>

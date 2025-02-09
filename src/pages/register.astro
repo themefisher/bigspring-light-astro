@@ -1,75 +1,161 @@
 ---
 import BaseForForms from "@/layouts/BaseForForms.astro";
-import { FaGoogle, FaGithub } from "react-icons/fa";
 const title = "Login";
 
 const description = "Login to your account";
 ---
 
 <BaseForForms title={title} description={description}>
-    <div class="mx-auto flex w-full flex-col justify-center pt-0 max-w-md">
-        <div class="my-auto mb-auto flex flex-col">
-            <p class="text-[32px] font-bold text-primary flex gap-4"><img src="/images/logo.png" alt="logo" class="h-6"><span>Registrar cuenta</span></p>
-            <div class="relative my-4">
-                <div class="relative flex items-center py-1">
-                    <div class="grow border-t border-neutral-200"></div>
-                    <div class="grow border-t border-neutral-200"></div>
-                </div>
-            </div>
-            <div>
-                <form novalidate="" class="mb-4">
-                    <div class="grid gap-2">
-                        <div class="grid gap-1">
-                            <label class="text-neutral-950" for="email">Correo</label><input
-                                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
-                                placeholder="nombre@ejemplo.com"
-                                type="email"
-                                autocapitalize="none"
-                                autocomplete="email"
-                                autocorrect="off"
-                                name="email"
-                            />
-
-                            <span class="text-red-500 text-sm">Hubo un error</span>
-
-                            <label class="text-neutral-950 mt-2" for="password"
-                                >Contraseña</label
-                            ><input
-                                placeholder="Contraseña"
-                                type="password"
-                                autocomplete="current-password"
-                                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
-                            />
-
-                            <span class="text-red-500 text-sm">Hubo un error</span>
-                            <label class="text-neutral-950 mt-2" for="password"
-                                >Confirmar contraseña</label
-                            ><input
-                                placeholder="Contraseña"
-                                type="password"
-                                autocomplete="current-password"
-                                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
-                            />
-
-                            <span class="text-red-500 text-sm">Hubo un error</span>
-                        </div><button
-                            class="mt-4 w-full border-2 border-primary bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-primary-dark transition duration-300"
-                            type="submit">Registrar</button
-                        >
-
-                        <div class="flex justify-center mt-4 gap-6">
-                            <p>
-                                <a
-                                    href="/login"
-                                    class="font-medium text-neutral-500 text-sm hover:underline"
-                                    >¿Ya tienes una cuenta?</a
-                                >
-                            </p>
-                        </div>
-                    </div>
-                </form>
-
-            </div>
+  <div class="mx-auto flex w-full flex-col justify-center pt-0 max-w-md">
+    <div class="my-auto mb-auto flex flex-col">
+      <p class="text-[32px] font-bold text-primary flex gap-4">
+        <img src="/images/logo.png" alt="logo" class="h-6" /><span
+          >Registrar cuenta</span>
+      </p>
+      <div class="relative my-4">
+        <div class="relative flex items-center py-1">
+          <div class="grow border-t border-neutral-200"></div>
+          <div class="grow border-t border-neutral-200"></div>
         </div>
+      </div>
+      <div>
+        <form id="register-form" class="mb-4">
+          <div class="grid gap-2">
+            <div class="grid gap-1">
+              <label class="text-neutral-950" for="name">Nombre</label><input
+                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
+                placeholder="Nombre"
+                type="text"
+                name="name"
+              />
+
+              <label class="text-neutral-950 mt-2"  for="email">Correo</label><input
+                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
+                placeholder="nombre@ejemplo.com"
+                type="email"
+                name="email"
+              />
+
+              <label class="text-neutral-950 mt-2" for="password"
+                >Contraseña</label
+              ><input
+                placeholder="Contraseña"
+                name="password"
+                type="password"
+                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
+              />
+
+              <label class="text-neutral-950 mt-2" for="password"
+                >Confirmar contraseña</label
+              ><input
+                name="confirmPassword"
+                placeholder="Confirmar contraseña"
+                type="password"
+                class="outline-none border border-neutral/950 rounded px-4 py-3 w-full mt-2 focus:outline-none focus:shadow-outline"
+              />
+            </div><button
+              id="btn-submit"
+              class="mt-4 w-full border-2 border-primary bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-primary-dark transition duration-300"
+              type="submit">Registrar</button
+            >
+
+            <div class="flex justify-center mt-4 gap-6">
+              <p>
+                <a
+                  href="/login"
+                  class="font-medium text-neutral-500 text-sm hover:underline"
+                  >¿Ya tienes una cuenta?</a
+                >
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </BaseForForms>
+
+<script>
+  import { actions } from "astro:actions";
+  import Swal from "sweetalert2";
+
+  document.addEventListener("astro:page-load", () => {
+    const $form = document.querySelector("#register-form") as HTMLFormElement;
+    const $btnSubmit = document.querySelector(
+      "#btn-submit"
+    ) as HTMLButtonElement;
+
+    $form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      $btnSubmit.disabled = true;
+
+      const formData = new FormData($form);
+
+      const { email, password, name, confirmPassword } =
+        Object.fromEntries(formData);
+
+      const passwordRegex =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
+      const emaliRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+      const isValidEmail = (email as String).match(emaliRegex);
+      const isValidPassword = (password as String).match(passwordRegex);
+      const isValidName = (name as String).length > 3;
+      const isValidConfirmPassword =
+        (confirmPassword as String) == (password as String);
+
+      if (!isValidEmail) {
+        showError(new Error("El correo electrónico no es válido"));
+        $btnSubmit.disabled = false;
+        return;
+      }
+
+      if (!isValidPassword) {
+        showError(
+          new Error(
+            "La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número"
+          )
+        );
+        $btnSubmit.disabled = false;
+        return;
+      }
+
+      if (!isValidName) {
+        showError(new Error("El nombre no es válido"));
+        $btnSubmit.disabled = false;
+        return;
+      }
+
+      if (!isValidConfirmPassword) {
+        showError(new Error("Contraseñas no coinciden"));
+        $btnSubmit.disabled = false;
+        return;
+      }
+
+      const { error } = await actions.registerUser(formData);
+
+
+      if (error) {
+        showError(error);
+        $btnSubmit.disabled = false;
+        if (error.message !== "Contraseñas no coinciden") $form.reset();
+
+        return;
+      }
+
+      $btnSubmit.innerText = "Redireccionando...";
+
+      window.location.replace("/");
+    });
+  });
+
+  const showError = (error: Error) => {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: error.message,
+    });
+  };
+</script>
+
+<!-- jugar2017@CJ -->
