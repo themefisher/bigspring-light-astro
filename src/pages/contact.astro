@@ -63,7 +63,10 @@ const { title, description, info } = entry.data;
             {
               info?.contacts?.map((contact) => (
                 <li>
-                  <strong class="text-dark" set:html={markdownify(contact)} />
+                  <strong
+                    class="text-text-dark"
+                    set:html={markdownify(contact)}
+                  />
                 </li>
               ))
             }
