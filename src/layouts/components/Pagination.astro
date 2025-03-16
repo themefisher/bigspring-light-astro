@@ -22,7 +22,7 @@ for (let i = 1; i <= totalPages; i++) {
               ? `${section ? "/" + section : "/"}`
               : `${section ? "/" + section : ""}/page/${currentPage - 1}`
           }
-          class="inline-flex items-center justify-center px-2 py-2 rounded bg-theme-light w-[42px] h-[42px] text-center text-dark"
+          class="inline-flex items-center justify-center px-2 py-2 rounded bg-light w-[42px] h-[42px] text-center text-text-text-dark"
         >
           <span class="sr-only">Previous</span>
           <svg
@@ -40,7 +40,7 @@ for (let i = 1; i <= totalPages; i++) {
           </svg>
         </a>
       ) : (
-        <span class="inline-flex items-center justify-center px-2 py-2 rounded bg-theme-light w-[42px] h-[42px] text-center text-dark">
+        <span class="inline-flex items-center justify-center px-2 py-2 rounded bg-light w-[42px] h-[42px] text-center text-text-text-dark">
           <span class="sr-only">Previous</span>
           <svg
             class="h-5 w-5"
@@ -75,7 +75,7 @@ for (let i = 1; i <= totalPages; i++) {
                 : `${section ? "/" + section : ""}/page/${pagination}`
             }
             aria-current="page"
-            class={`rounded bg-theme-light w-[42px] h-[42px] text-center px-4 py-2 text-dark`}
+            class={`rounded bg-light w-[42px] h-[42px] text-center px-4 py-2 text-text-text-dark`}
           >
             {pagination}
           </a>
@@ -86,7 +86,7 @@ for (let i = 1; i <= totalPages; i++) {
       {hasNextPage ? (
         <a
           href={`${section ? "/" + section : ""}/page/${currentPage + 1}`}
-          class="inline-flex items-center justify-center px-2 py-2 rounded bg-theme-light w-[42px] h-[42px] text-center text-dark"
+          class="inline-flex items-center justify-center px-2 py-2 rounded bg-light w-[42px] h-[42px] text-center text-text-text-dark"
         >
           <span class="sr-only">Next</span>
           <svg
@@ -104,7 +104,7 @@ for (let i = 1; i <= totalPages; i++) {
           </svg>
         </a>
       ) : (
-        <span class="inline-flex items-center justify-center px-2 py-2 rounded bg-theme-light w-[42px] h-[42px] text-center text-dark">
+        <span class="inline-flex items-center justify-center px-2 py-2 rounded bg-light w-[42px] h-[42px] text-center text-text-dark">
           <span class="sr-only">Next</span>
           <svg
             class="h-5 w-5"

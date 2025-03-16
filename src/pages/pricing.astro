@@ -26,10 +26,10 @@ const { title, description, plans, call_to_action } = entry.data;
               <div class="card text-center">
                 <h4>{plan.title}</h4>
                 <div class="mt-5">
-                  <span class="text-5xl text-dark">${plan.price}</span>
+                  <span class="text-5xl text-text-dark">${plan.price}</span>
                   <span>/ {plan.type}</span>
                 </div>
-                <h5 class="mt-2 font-normal text-text">{plan.subtitle}</h5>
+                <h6 class="mt-2 font-normal text-text">{plan.subtitle}</h6>
                 <ul class="mt-5">
                   {plan?.features?.map((feature) => (
                     <li class="mb-[10px] leading-5">{feature}</li>

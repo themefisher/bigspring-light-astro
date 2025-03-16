@@ -51,7 +51,7 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
   </section>
 
   <!-- Features -->
-  <section class="section bg-theme-light">
+  <section class="section bg-light">
     <div class="container">
       <div class="text-center">
         <h2>{markdownify(feature.title)}</h2>
@@ -85,7 +85,7 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
     services!.map((service, index) => {
       const isOdd = index % 2 > 0;
       return (
-        <section class={`section ${isOdd && "bg-theme-light"}`}>
+        <section class={`section ${isOdd && "bg-light"}`}>
           <div class="container">
             <div class="items-center gap-8 md:grid md:grid-cols-2">
               <div class={`service-carousel ${!isOdd && "md:order-2"}`}>
@@ -178,9 +178,9 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
   document.addEventListener("astro:page-load", () => {
     new Swiper(".service-carousel .swiper", {
       modules: [Pagination, Autoplay],
-      autoplay: {
-        delay: 3000,
-      },
+      // autoplay: {
+      //   delay: 3000,
+      // },
       pagination: {
         type: "bullets",
         el: ".service-carousel .pagination",
