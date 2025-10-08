@@ -19,7 +19,7 @@
 }
 .form-input,
 .form-textarea {
-  @apply border-border py-[6px] focus:border-primary focus:ring-transparent;
+  @apply border-border py-3 focus:border-primary focus:ring-transparent;
 }
 
 /* swiper pagination */

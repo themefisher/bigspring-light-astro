@@ -164,7 +164,6 @@ const pagesCollection = defineCollection({
     meta_title: z.string().optional(),
     description: z.string().optional(),
     image: z.string().optional(),
-    layout: z.string().optional(),
     draft: z.boolean().optional(),
   }),
 });
