@@ -216,9 +216,11 @@
   @apply prose-pre:rounded;
   @apply prose-strong:text-text-dark;
   @apply prose-a:text-primary prose-a:no-underline hover:prose-a:underline;
+  @apply prose-img:max-w-full prose-img:rounded-lg;
   @apply prose-li:text-text;
-  @apply prose-table:overflow-hidden prose-table:border prose-table:border-border;
-  @apply prose-thead:border-border prose-thead:bg-light prose-th:py-4 prose-th:px-4 prose-th:text-text-dark;
+  @apply prose-table:relative prose-table:overflow-hidden prose-table:rounded-lg prose-table:before:absolute prose-table:before:left-0 prose-table:before:top-0 prose-table:before:h-full prose-table:before:w-full prose-table:before:rounded-[inherit] prose-table:before:border prose-table:before:border-border prose-table:before:content-[""];
+  @apply prose-thead:border-border prose-thead:bg-light;
+  @apply prose-th:relative prose-th:z-10 prose-th:px-4 prose-th:py-[18px] prose-th:text-text-dark;
   @apply prose-tr:border-border;
-  @apply prose-td:px-3 prose-td:py-4;
+  @apply prose-td:relative prose-td:z-10 prose-td:px-3 prose-td:py-[18px];
 }

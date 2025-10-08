@@ -178,9 +178,9 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
   document.addEventListener("astro:page-load", () => {
     new Swiper(".service-carousel .swiper", {
       modules: [Pagination, Autoplay],
-      // autoplay: {
-      //   delay: 3000,
-      // },
+      autoplay: {
+        delay: 3000,
+      },
       pagination: {
         type: "bullets",
         el: ".service-carousel .pagination",

@@ -8,7 +8,7 @@
     "logo": "/images/logo.png",
     "logo_width": "200",
     "logo_height": "38",
-    "logo_text": "Astroplate"
+    "logo_text": "Bigspring Light"
   },
 
   "settings": {
@@ -23,8 +23,7 @@
   },
 
   "params": {
-    "contact_form_action": "",
-    "tag_manager_id": "",
+    "contact_form_action": "#",
     "footer_content": "Lorem ipsum dolor sit amet, consectetur elit. Consjat tristique eget amet, tempus eu at cttur.",
     "copyright": "Designed and Developed By [Themefisher](https://themefisher.com/)"
   },
@@ -32,6 +31,10 @@
   "metadata": {
     "meta_author": "Themefisher",
     "meta_image": "/images/og-image.png",
-    "meta_description": "astro boilerplate"
+    "meta_description": "astro free blog theme"
+  },
+  "google_tag_manager": {
+    "enable": false,
+    "gtm_id": "GTM-XXXXXX"
   }
 }

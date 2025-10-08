@@ -1,15 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
 import { marked } from "marked";
+import React, { useEffect, useRef, useState } from "react";
 
-interface TabChildrenProps {
-  value: string;
-}
-
-const Tabs = ({ children }: { children: React.ReactElement<TabChildrenProps> }) => {
+const Tabs = ({ children }: { children: React.ReactElement }) => {
   const [active, setActive] = useState<number>(0);
   const [defaultFocus, setDefaultFocus] = useState<boolean>(false);
 
-  const tabRefs = useRef<HTMLElement[]>([]);
+  const tabRefs: React.RefObject<HTMLElement[]> = useRef([]);
   useEffect(() => {
     if (defaultFocus) {
       //@ts-ignore
@@ -20,9 +16,8 @@ const Tabs = ({ children }: { children: React.ReactElement<TabChildrenProps> }) 
   }, [active]);
 
   const tabLinks = Array.from(
-    children.props.value.matchAll(
-      //@ts-ignore
-      /<div\s+data-name="([^"]+)"[^>]*>(.*?)<\/div>/gs,
+    (children.props as any).value.matchAll(
+      /<div\s+data-name="([^"]+)"[^>]*>((?:.|\n)*?)<\/div>/g,
     ),
     (match: RegExpMatchArray) => ({ name: match[1], children: match[0] }),
   );
@@ -47,7 +42,7 @@ const Tabs = ({ children }: { children: React.ReactElement<TabChildrenProps> }) 
           (item: { name: string; children: string }, index: number) => (
             <li
               key={index}
-              className={`tab-nav-item ${index === active ? "active" : ""}`}
+              className={`tab-nav-item ${index === active && "active"}`}
               role="tab"
               tabIndex={index === active ? 0 : -1}
               onKeyDown={(event) => handleKeyDown(event, index)}
