@@ -6,6 +6,19 @@ import { markdownify } from "@/lib/utils/textConverter";
 import { getEntry } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
+import { Swiper, SwiperWrapper, SwiperSlide, SwiperPagination } from "astro-swiper";
+import type { SwiperOptions } from 'swiper/types'
+const swiperOptions: SwiperOptions = {
+  autoplay: {
+    delay: 3000,
+  },
+  pagination: {
+    type: "bullets",
+    el: ".service-carousel .pagination",
+    clickable: true,
+  },
+}
+
 const homepage = (await getEntry(
   "homepage",
   "-index"
@@ -90,10 +103,10 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
             <div class="items-center gap-8 md:grid md:grid-cols-2">
               <div class={`service-carousel ${!isOdd && "md:order-2"}`}>
                 {service!.images!.length > 1 ? (
-                  <div class="swiper">
-                    <div class="swiper-wrapper">
+                  <Swiper class=".service-carousel" options={swiperOptions}>
+                    <SwiperWrapper>
                       {service.images?.map((image) => (
-                        <div class="swiper-slide">
+                        <SwiperSlide>
                           <Image
                             class="mx-auto"
                             src={image}
@@ -101,11 +114,11 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
                             height={328}
                             alt=""
                           />
-                        </div>
+                        </SwiperSlide>
                       ))}
-                    </div>
-                    <div class="pagination" />
-                  </div>
+                    </SwiperWrapper>
+                    <SwiperPagination class="pagination" />
+                  </Swiper>
                 ) : (
                   <Image
                     class="mx-auto"
@@ -167,25 +180,3 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
   <!-- Call to Action -->
   <Cta cta={call_to_action} />
 </Base>
-
-<script>
-  import { Swiper } from "swiper";
-  import "swiper/css";
-  import "swiper/css/pagination";
-  import { Autoplay, Pagination } from "swiper/modules";
-
-  // astro:page-load event is fired when the page is loaded
-  document.addEventListener("astro:page-load", () => {
-    new Swiper(".service-carousel .swiper", {
-      modules: [Pagination, Autoplay],
-      autoplay: {
-        delay: 3000,
-      },
-      pagination: {
-        type: "bullets",
-        el: ".service-carousel .pagination",
-        clickable: true,
-      },
-    });
-  });
-</script>
