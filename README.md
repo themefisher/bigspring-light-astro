@@ -18,7 +18,7 @@
     <img src="https://img.shields.io/github/contributors/themefisher/bigspring-light-astro" alt="contributors"></a>
 </p>
 
-![bigspring-light](https://demo.gethugothemes.com/thumbnails/bigspring-light.png)
+![bigspring-light](https://assets.teamosis.com/thumbs/bigspring-light.png)
 
 Bigspring is a beautifully designed & highly customizable Astro theme created specifically for SaaS & marketing websites. Users can customize the color scheme, fonts, menu, social links, etc. and update the content easily based on their requirements. Bigspring is the perfect theme for showcasing your SaaS products or services and connecting with customers.
 
