@@ -1,5 +1,6 @@
 import { glob } from "astro/loaders";
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 
 // Homepage collection schema
 const homepageCollection = defineCollection({
@@ -148,17 +149,18 @@ const blogCollection = defineCollection({
     title: z.string(),
     meta_title: z.string().optional(),
     description: z.string().optional(),
-    date: z.date().optional(),
+    date: z.coerce.date().optional(),
     image: z.string().optional(),
-    authors: z.array(z.string()).default(["admin"]),
-    categories: z.array(z.string()).default(["others"]),
-    tags: z.array(z.string()).default(["others"]),
+    authors: z.array(z.string()).default(() => ["admin"]),
+    categories: z.array(z.string()).default(() => ["others"]),
+    tags: z.array(z.string()).default(() => ["others"]),
     draft: z.boolean().optional(),
   }),
 });
 
 // Pages collection schema
 const pagesCollection = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/pages" }),
   schema: z.object({
     title: z.string(),
     meta_title: z.string().optional(),
