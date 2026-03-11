@@ -1,6 +1,6 @@
 {
   "name": "bigspring-light-astro",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "astro personal blog theme",
   "author": "themefisher",
   "license": "MIT",
@@ -15,23 +15,22 @@
     "preview:cf-workers": "npm run build && wrangler dev"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.7-beta.1",
-    "@astrojs/mdx": "5.0.0-beta.9",
-    "@astrojs/react": "5.0.0-beta.3",
-    "@astrojs/sitemap": "3.7.0",
+    "@astrojs/check": "0.9.7",
+    "@astrojs/mdx": "5.0.0",
+    "@astrojs/react": "5.0.0",
+    "@astrojs/sitemap": "3.7.1",
     "@digi4care/astro-google-tagmanager": "^1.6.0",
     "@justinribeiro/lite-youtube": "^1.9.0",
     "@tailwindcss/vite": "^4.2.1",
-    "astro": "6.0.0-beta.17",
+    "astro": "6.0.2",
     "astro-auto-import": "^0.5.1",
-    "astro-font": "^1.1.0",
-    "astro-swiper": "^2.1.1",
+    "astro-swiper": "^2.2.1",
     "date-fns": "^4.1.0",
     "github-slugger": "^2.0.0",
-    "marked": "^17.0.3",
+    "marked": "^17.0.4",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-icons": "^5.5.0",
+    "react-icons": "^5.6.0",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
     "sharp": "0.34.5",
@@ -40,13 +39,15 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "25.4.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "19.2.3",
+    "eslint": "^10.0.3",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3",
-    "wrangler": "^4"
+    "wrangler": "^4.72.0"
   }
 }
